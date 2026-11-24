@@ -2,9 +2,9 @@ MAPA SZKOŁY V5 – WSPÓLNY MOTYW CSS
 
 1. Rozpakuj cały ZIP, zachowując strukturę folderów.
 2. Otwórz mapa.html w przeglądarce. Nie wymaga serwera.
-3. Edytuj style.css – na początku (:root) są globalne kolory, rozmiary, czcionki, grubości linii, a niżej reguły interfejsu. Zapisz plik i odśwież mapę.
+3. Edytuj style.css. Na początku pliku, w sekcji :root, znajdziesz wspólną paletę 10 kolorów, rozmiary tekstu interfejsu i etykiet SVG oraz ustawienia linii i układu. Zapisz plik i odśwież mapę.
 
-Przykład: --room-fill: #e7efff; --route: #e24d31; --label-size: 15px;
+Przykład: `--route` ustawia kolor trasy, `--text-body` rozmiar tekstu formularza, a `--map-text` rozmiar standardowej etykiety sali.
 
 Pliki SVG także odwołują się do style.css poprzez xml-stylesheet. Otwieraj je bezpośrednio lub osadzaj jako inline SVG / object; zewnętrzny CSS zwykle nie jest pobierany przez SVG użyte jako img lub background-image.
 

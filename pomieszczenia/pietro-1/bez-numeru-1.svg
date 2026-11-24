@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="../../style.css"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="147 24 76 66"><g id="rooms"><path id="pietro-1-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M151,28 L219,28 L219,86 L151,86 Z"><title>Pomieszczenie bez opisu</title></path></g><g id="labels"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="147 24 76 66"><g id="rooms"><path id="pietro-1-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pietro-1" data-name="102a" fill-rule="evenodd" clip-rule="evenodd" d="M151,28 L219,28 L219,86 L151,86 Z"><title>102a</title></path></g><g id="labels"><text class="room-label"><tspan x="185" y="61.16" class="label-number">102a</tspan></text></g></svg>

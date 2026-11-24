@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="../../style.css"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="615 155 32 115"><g id="rooms"><path id="pracownie-bez-numeru-14" class="room" data-room-id="bez-numeru-14" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M619,159 L643,159 L643,266 L619,266 Z"><title>Pomieszczenie bez opisu</title></path></g><g id="labels"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="615 155 32 115"><g id="rooms"><path id="pracownie-bez-numeru-14" class="room" data-room-id="bez-numeru-14" data-level="pracownie" data-name="Część siłowni" fill-rule="evenodd" clip-rule="evenodd" d="M619,159 L643,159 L643,266 L619,266 Z"><title>Część siłowni</title></path></g><g id="labels"><text class="room-label" transform="rotate(90 631 212.5)"><tspan x="631" y="216.66" class="label-name">Część siłowni</tspan></text></g></svg>

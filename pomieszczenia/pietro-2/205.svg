@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="../../style.css"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="518 13 103 65"><g id="rooms"><path id="pietro-2-205" class="room" data-room-id="205" data-level="pietro-2" data-name="205 – Polski" fill-rule="evenodd" clip-rule="evenodd" d="M522,17 L617,17 L617,74 L522,74 Z"><title>205 – Polski</title></path></g><g id="labels"><text class="room-label"><tspan x="569.5" y="42.19" class="label-number">205</tspan><tspan x="569.5" y="57.14" class="label-name">Polski</tspan></text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="518 13 103 65"><g id="rooms"><path id="pietro-2-205" class="room" data-room-id="205" data-level="pietro-2" data-name="205" fill-rule="evenodd" clip-rule="evenodd" d="M522,17 L617,17 L617,74 L522,74 Z"><title>205</title></path></g><g id="labels"><text class="room-label"><tspan x="569.5" y="49.66" class="label-number">205</tspan></text></g></svg>

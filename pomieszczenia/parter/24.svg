@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="../../style.css"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="46 406 107 64"><g id="rooms"><path id="parter-24" class="room" data-room-id="24" data-level="parter" data-name="24 – Informatyka" fill-rule="evenodd" clip-rule="evenodd" d="M50,410 L149,410 L149,466 L50,466 Z"><title>24 – Informatyka</title></path></g><g id="labels"><text class="room-label"><tspan x="99.5" y="434.69" class="label-number">24</tspan><tspan x="99.5" y="449.63" class="label-name">Informatyka</tspan></text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="46 406 107 64"><g id="rooms"><path id="parter-24" class="room" data-room-id="24" data-level="parter" data-name="24" fill-rule="evenodd" clip-rule="evenodd" d="M50,410 L149,410 L149,466 L50,466 Z"><title>24</title></path></g><g id="labels"><text class="room-label"><tspan x="99.5" y="442.16" class="label-number">24</tspan></text></g></svg>

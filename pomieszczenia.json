@@ -267,13 +267,13 @@
     "level": "pracownie",
     "id": "pracownie-bez-numeru-14",
     "room_id": "bez-numeru-14",
-    "name": null,
+    "name": "Część siłowni",
     "category": "room",
     "d": "M619,159 L643,159 L643,266 L619,266 Z",
     "file": "pomieszczenia/pracownie/bez-numeru-14.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "Część siłowni",
+    "displayName": "Część siłowni"
   },
   {
     "level": "pracownie",
@@ -495,49 +495,49 @@
     "level": "niski-parter",
     "id": "niski-parter-01",
     "room_id": "01",
-    "name": "01 – ciemnia",
+    "name": "01",
     "category": "room",
     "d": "M49,51 L115,51 L115,109 L49,109 Z",
     "file": "pomieszczenia/niski-parter/01.svg",
     "number": "01",
-    "roomName": "ciemnia",
-    "displayName": "01 – ciemnia"
+    "roomName": null,
+    "displayName": "01"
   },
   {
     "level": "niski-parter",
     "id": "niski-parter-bez-numeru-1",
     "room_id": "bez-numeru-1",
-    "name": null,
+    "name": "kuchnia",
     "category": "room",
     "d": "M152,51 L202,51 L202,109 L152,109 Z",
     "file": "pomieszczenia/niski-parter/bez-numeru-1.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "kuchnia",
+    "displayName": "kuchnia"
   },
   {
     "level": "niski-parter",
     "id": "niski-parter-031",
     "room_id": "031",
-    "name": "031 – Bufet",
+    "name": "jadalnia",
     "category": "room",
     "d": "M222,51 L297,51 L297,109 L206,109 L206,94 L232,94 L232,79 L222,79 Z",
     "file": "pomieszczenia/niski-parter/031.svg",
-    "number": "031",
-    "roomName": "Bufet",
-    "displayName": "031 – Bufet"
+    "number": null,
+    "roomName": "jadalnia",
+    "displayName": "jadalnia"
   },
   {
     "level": "niski-parter",
     "id": "niski-parter-032",
     "room_id": "032",
-    "name": "032 – Bufet",
+    "name": "bufet",
     "category": "room",
     "d": "M301,51 L425,51 L425,109 L301,109 Z",
     "file": "pomieszczenia/niski-parter/032.svg",
-    "number": "032",
-    "roomName": "Bufet",
-    "displayName": "032 – Bufet"
+    "number": null,
+    "roomName": "bufet",
+    "displayName": "bufet"
   },
   {
     "level": "niski-parter",
@@ -555,13 +555,13 @@
     "level": "niski-parter",
     "id": "niski-parter-bez-numeru-3",
     "room_id": "bez-numeru-3",
-    "name": null,
+    "name": "magazyn",
     "category": "room",
     "d": "M457,51 L478,51 L478,109 L457,109 Z",
     "file": "pomieszczenia/niski-parter/bez-numeru-3.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "magazyn",
+    "displayName": "magazyn"
   },
   {
     "level": "niski-parter",
@@ -579,25 +579,25 @@
     "level": "niski-parter",
     "id": "niski-parter-bez-numeru-5",
     "room_id": "bez-numeru-5",
-    "name": null,
+    "name": "ksero",
     "category": "room",
     "d": "M508,51 L530,51 L530,109 L508,109 Z",
     "file": "pomieszczenia/niski-parter/bez-numeru-5.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "ksero",
+    "displayName": "ksero"
   },
   {
     "level": "niski-parter",
     "id": "niski-parter-036",
     "room_id": "036",
-    "name": "036 – Rodzice",
+    "name": "Klub Stajnia",
     "category": "room",
     "d": "M534,51 L600,51 L600,109 L534,109 Z",
     "file": "pomieszczenia/niski-parter/036.svg",
-    "number": "036",
-    "roomName": "Rodzice",
-    "displayName": "036 – Rodzice"
+    "number": null,
+    "roomName": "Klub Stajnia",
+    "displayName": "Klub Stajnia"
   },
   {
     "level": "niski-parter",
@@ -747,13 +747,13 @@
     "level": "niski-parter",
     "id": "niski-parter-bez-numeru-17",
     "room_id": "bez-numeru-17",
-    "name": null,
+    "name": "25",
     "category": "room",
     "d": "M942,174 L988,174 L988,232 L942,232 Z",
     "file": "pomieszczenia/niski-parter/bez-numeru-17.svg",
-    "number": null,
+    "number": "25",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "25"
   },
   {
     "level": "parter",
@@ -761,7 +761,7 @@
     "room_id": "boisko",
     "name": "BOISKO",
     "category": "outdoor",
-    "d": "M237,34 L637,34 L637,405 L237,405 L237,269 L46,269 L46,232 L237,232 Z M242,271 L272,271 L272,382 L242,382 Z M595,240 L633,240 L633,336 L595,336 Z",
+    "d": "M237,34 L637,34 L637,405 L237,405 Z",
     "file": "pomieszczenia/parter/boisko.svg",
     "number": null,
     "roomName": "BOISKO",
@@ -769,255 +769,195 @@
   },
   {
     "level": "parter",
-    "id": "parter-bez-numeru-1",
-    "room_id": "bez-numeru-1",
-    "name": null,
-    "category": "outdoor",
-    "d": "M46,34 L236,34 L236,231 L46,231 Z",
-    "file": "pomieszczenia/parter/bez-numeru-1.svg",
+    "id": "parter-pracownia-zawodowa",
+    "room_id": "pracownia-zawodowa",
+    "name": "Pracownia zawodowa",
+    "category": "room",
+    "d": "M46,34 L237,34 L237,405 L46,405 Z",
+    "file": "pomieszczenia/parter/pracownia-zawodowa.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
-  },
-  {
-    "level": "parter",
-    "id": "parter-bez-numeru-2",
-    "room_id": "bez-numeru-2",
-    "name": null,
-    "category": "outdoor",
-    "d": "M46,270 L236,270 L236,405 L46,405 Z",
-    "file": "pomieszczenia/parter/bez-numeru-2.svg",
-    "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
-  },
-  {
-    "level": "parter",
-    "id": "parter-grill",
-    "room_id": "grill",
-    "name": "grill",
-    "category": "amenity",
-    "d": "M242,271 L272,271 L272,382 L242,382 Z",
-    "file": "pomieszczenia/parter/grill.svg",
-    "number": null,
-    "roomName": "grill",
-    "displayName": "grill"
-  },
-  {
-    "level": "parter",
-    "id": "parter-kawiarenka",
-    "room_id": "kawiarenka",
-    "name": "kawiarenka",
-    "category": "amenity",
-    "d": "M595,240 L633,240 L633,336 L595,336 Z",
-    "file": "pomieszczenia/parter/kawiarenka.svg",
-    "number": null,
-    "roomName": "kawiarenka",
-    "displayName": "kawiarenka"
+    "roomName": "Pracownia zawodowa",
+    "displayName": "Pracownia zawodowa"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-3",
     "room_id": "bez-numeru-3",
-    "name": null,
+    "name": "magazyn sprzętu sportowego",
     "category": "room",
     "d": "M645,64 L686,64 L686,98 L645,98 Z",
     "file": "pomieszczenia/parter/bez-numeru-3.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
-  },
-  {
-    "level": "parter",
-    "id": "parter-bez-numeru-4",
-    "room_id": "bez-numeru-4",
-    "name": null,
-    "category": "room",
-    "d": "M645,101 L686,101 L686,124 L645,124 Z",
-    "file": "pomieszczenia/parter/bez-numeru-4.svg",
-    "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "magazyn sprzętu sportowego",
+    "displayName": "magazyn sprzętu sportowego"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-5",
     "room_id": "bez-numeru-5",
-    "name": null,
+    "name": "pok. instruktora",
     "category": "room",
-    "d": "M645,128 L686,128 L686,147 L645,147 Z",
+    "d": "M645,101 L686,101 L686,147 L645,147 Z",
     "file": "pomieszczenia/parter/bez-numeru-5.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "pok. instruktora",
+    "displayName": "pok. instruktora"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-6",
     "room_id": "bez-numeru-6",
-    "name": null,
+    "name": "Szatnia",
     "category": "room",
     "d": "M645,151 L686,151 L686,192 L645,192 Z",
     "file": "pomieszczenia/parter/bez-numeru-6.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "Szatnia",
+    "displayName": "Szatnia"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-7",
     "room_id": "bez-numeru-7",
-    "name": null,
+    "name": "Natryski / WC",
     "category": "room",
     "d": "M645,196 L686,196 L686,244 L645,244 Z",
     "file": "pomieszczenia/parter/bez-numeru-7.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "Natryski / WC",
+    "displayName": "Natryski / WC"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-8",
     "room_id": "bez-numeru-8",
-    "name": null,
+    "name": "Szatnia",
     "category": "room",
     "d": "M645,248 L686,248 L686,291 L645,291 Z",
     "file": "pomieszczenia/parter/bez-numeru-8.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "Szatnia",
+    "displayName": "Szatnia"
   },
   {
     "level": "parter",
     "id": "parter-18",
     "room_id": "18",
-    "name": "18 – Pomoc przedmedyczna",
+    "name": "18 – Gabinet lekarski",
     "category": "amenity",
     "d": "M645,295 L686,295 L686,340 L645,340 Z",
     "file": "pomieszczenia/parter/18.svg",
     "number": "18",
-    "roomName": "Pomoc przedmedyczna",
-    "displayName": "18 – Pomoc przedmedyczna"
+    "roomName": "Gabinet lekarski",
+    "displayName": "18 – Gabinet lekarski"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-9",
     "room_id": "bez-numeru-9",
-    "name": null,
+    "name": "Sala Gimnastyczna",
     "category": "room",
     "d": "M712,63 L835,63 L835,301 L712,301 Z",
     "file": "pomieszczenia/parter/bez-numeru-9.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
-  },
-  {
-    "level": "parter",
-    "id": "parter-recepcja",
-    "room_id": "recepcja",
-    "name": "recepcja",
-    "category": "amenity",
-    "d": "M690,307 L730,307 L730,423 L685,423 L685,344 L690,344 Z",
-    "file": "pomieszczenia/parter/recepcja.svg",
-    "number": null,
-    "roomName": "recepcja",
-    "displayName": "recepcja"
+    "roomName": "Sala Gimnastyczna",
+    "displayName": "Sala Gimnastyczna"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-10",
     "room_id": "bez-numeru-10",
-    "name": null,
+    "name": "16",
     "category": "room",
     "d": "M737,309 L760,309 L760,356 L737,356 Z",
     "file": "pomieszczenia/parter/bez-numeru-10.svg",
-    "number": null,
+    "number": "16",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "16"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-11",
     "room_id": "bez-numeru-11",
-    "name": null,
+    "name": "15",
     "category": "room",
     "d": "M765,309 L827,309 L827,369 L765,369 Z",
     "file": "pomieszczenia/parter/bez-numeru-11.svg",
-    "number": null,
+    "number": "15",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "15"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-12",
     "room_id": "bez-numeru-12",
-    "name": null,
+    "name": "14",
     "category": "room",
     "d": "M779,372 L827,372 L827,400 L779,400 Z",
     "file": "pomieszczenia/parter/bez-numeru-12.svg",
-    "number": null,
+    "number": "14",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "14"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-13",
     "room_id": "bez-numeru-13",
-    "name": null,
+    "name": "13",
     "category": "room",
     "d": "M779,404 L827,404 L827,430 L779,430 Z",
     "file": "pomieszczenia/parter/bez-numeru-13.svg",
-    "number": null,
+    "number": "13",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "13"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-14",
     "room_id": "bez-numeru-14",
-    "name": null,
+    "name": "12",
     "category": "room",
     "d": "M737,405 L775,405 L775,430 L737,430 Z",
     "file": "pomieszczenia/parter/bez-numeru-14.svg",
-    "number": null,
+    "number": "12",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "12"
   },
   {
     "level": "parter",
     "id": "parter-24",
     "room_id": "24",
-    "name": "24 – Informatyka",
+    "name": "24",
     "category": "room",
     "d": "M50,410 L149,410 L149,466 L50,466 Z",
     "file": "pomieszczenia/parter/24.svg",
     "number": "24",
-    "roomName": "Informatyka",
-    "displayName": "24 – Informatyka"
+    "roomName": null,
+    "displayName": "24"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-15",
     "room_id": "bez-numeru-15",
-    "name": null,
+    "name": "23",
     "category": "room",
     "d": "M154,410 L199,410 L199,466 L154,466 Z",
     "file": "pomieszczenia/parter/bez-numeru-15.svg",
-    "number": null,
+    "number": "23",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "23"
   },
   {
     "level": "parter",
     "id": "parter-22",
     "room_id": "22",
-    "name": "22 – Sala kinowa",
+    "name": "22",
     "category": "room",
     "d": "M204,410 L300,410 L300,466 L204,466 Z",
     "file": "pomieszczenia/parter/22.svg",
     "number": "22",
-    "roomName": "Sala kinowa",
-    "displayName": "22 – Sala kinowa"
+    "roomName": null,
+    "displayName": "22"
   },
   {
     "level": "parter",
@@ -1035,181 +975,181 @@
     "level": "parter",
     "id": "parter-bez-numeru-17",
     "room_id": "bez-numeru-17",
-    "name": null,
+    "name": "Studio RTV",
     "category": "room",
     "d": "M357,410 L401,410 L401,450 L357,450 Z",
     "file": "pomieszczenia/parter/bez-numeru-17.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "Studio RTV",
+    "displayName": "Studio RTV"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-18",
     "room_id": "bez-numeru-18",
-    "name": null,
+    "name": "21A",
     "category": "room",
     "d": "M405,410 L426,410 L426,466 L357,466 L357,454 L405,454 Z",
     "file": "pomieszczenia/parter/bez-numeru-18.svg",
-    "number": null,
+    "number": "21A",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "21A"
   },
   {
     "level": "parter",
     "id": "parter-21",
     "room_id": "21",
-    "name": "21 – Ławka szkolna",
+    "name": "21",
     "category": "room",
     "d": "M431,410 L478,410 L478,466 L431,466 Z",
     "file": "pomieszczenia/parter/21.svg",
     "number": "21",
-    "roomName": "Ławka szkolna",
-    "displayName": "21 – Ławka szkolna"
+    "roomName": null,
+    "displayName": "21"
   },
   {
     "level": "parter",
     "id": "parter-20",
     "room_id": "20",
-    "name": "20 – Spotkania absolwentów",
+    "name": "20",
     "category": "room",
     "d": "M482,410 L580,410 L580,466 L482,466 Z",
     "file": "pomieszczenia/parter/20.svg",
     "number": "20",
-    "roomName": "Spotkania absolwentów",
-    "displayName": "20 – Spotkania absolwentów"
+    "roomName": null,
+    "displayName": "20"
   },
   {
     "level": "parter",
     "id": "parter-19",
     "room_id": "19",
-    "name": "19 – Odszukaj siebie w kronice klasowej i szkolnej",
+    "name": "19",
     "category": "room",
     "d": "M584,410 L680,410 L680,466 L584,466 Z",
     "file": "pomieszczenia/parter/19.svg",
     "number": "19",
-    "roomName": "Odszukaj siebie w kronice klasowej i szkolnej",
-    "displayName": "19 – Odszukaj siebie w kronice klasowej i szkolnej"
+    "roomName": null,
+    "displayName": "19"
   },
   {
     "level": "parter",
     "id": "parter-10",
     "room_id": "10",
-    "name": "10 – Projekty techniczne – wczoraj i dziś",
+    "name": "10 – Świetlica",
     "category": "room",
     "d": "M759,437 L933,437 L933,507 L759,507 Z",
     "file": "pomieszczenia/parter/10.svg",
     "number": "10",
-    "roomName": "Projekty techniczne – wczoraj i dziś",
-    "displayName": "10 – Projekty techniczne – wczoraj i dziś"
+    "roomName": "Świetlica",
+    "displayName": "10 – Świetlica"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-19",
     "room_id": "bez-numeru-19",
-    "name": null,
+    "name": "9",
     "category": "room",
     "d": "M939,437 L1000,437 L1000,506 L939,506 Z",
     "file": "pomieszczenia/parter/bez-numeru-19.svg",
-    "number": null,
+    "number": "9",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "9"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-20",
     "room_id": "bez-numeru-20",
-    "name": null,
+    "name": "8",
     "category": "room",
     "d": "M939,510 L1000,510 L1000,527 L939,527 Z",
     "file": "pomieszczenia/parter/bez-numeru-20.svg",
-    "number": null,
+    "number": "8",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "8"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-21",
     "room_id": "bez-numeru-21",
-    "name": null,
+    "name": "1 – Portiernia",
     "category": "room",
-    "d": "M759,539 L780,539 L780,589 L759,589 Z",
+    "d": "M730,539 L780,539 L780,589 L730,589 Z",
     "file": "pomieszczenia/parter/bez-numeru-21.svg",
-    "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "number": "1",
+    "roomName": "Portiernia",
+    "displayName": "1 – Portiernia"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-22",
     "room_id": "bez-numeru-22",
-    "name": null,
+    "name": "2",
     "category": "room",
     "d": "M784,539 L809,539 L809,589 L784,589 Z",
     "file": "pomieszczenia/parter/bez-numeru-22.svg",
-    "number": null,
+    "number": "2",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "2"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-23",
     "room_id": "bez-numeru-23",
-    "name": null,
+    "name": "3",
     "category": "room",
     "d": "M813,539 L838,539 L838,589 L813,589 Z",
     "file": "pomieszczenia/parter/bez-numeru-23.svg",
-    "number": null,
+    "number": "3",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "3"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-24",
     "room_id": "bez-numeru-24",
-    "name": null,
+    "name": "4",
     "category": "room",
     "d": "M843,539 L881,539 L881,589 L843,589 Z",
     "file": "pomieszczenia/parter/bez-numeru-24.svg",
-    "number": null,
+    "number": "4",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "4"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-25",
     "room_id": "bez-numeru-25",
-    "name": null,
+    "name": "5",
     "category": "room",
     "d": "M886,539 L911,539 L911,589 L886,589 Z",
     "file": "pomieszczenia/parter/bez-numeru-25.svg",
-    "number": null,
+    "number": "5",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "5"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-26",
     "room_id": "bez-numeru-26",
-    "name": null,
+    "name": "6",
     "category": "room",
     "d": "M915,539 L939,539 L939,589 L915,589 Z",
     "file": "pomieszczenia/parter/bez-numeru-26.svg",
-    "number": null,
+    "number": "6",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "6"
   },
   {
     "level": "parter",
     "id": "parter-bez-numeru-27",
     "room_id": "bez-numeru-27",
-    "name": null,
+    "name": "7",
     "category": "room",
     "d": "M943,537 L985,537 L985,589 L943,589 Z",
     "file": "pomieszczenia/parter/bez-numeru-27.svg",
-    "number": null,
+    "number": "7",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "7"
   },
   {
     "level": "parter",
@@ -1227,133 +1167,133 @@
     "level": "pietro-1",
     "id": "pietro-1-101",
     "room_id": "101",
-    "name": "101 – Pracownia druku 3-D",
+    "name": "101",
     "category": "room",
     "d": "M48,28 L145,28 L145,66 L136,66 L136,86 L48,86 Z",
     "file": "pomieszczenia/pietro-1/101.svg",
     "number": "101",
-    "roomName": "Pracownia druku 3-D",
-    "displayName": "101 – Pracownia druku 3-D"
+    "roomName": null,
+    "displayName": "101"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-bez-numeru-1",
     "room_id": "bez-numeru-1",
-    "name": null,
+    "name": "102a",
     "category": "room",
     "d": "M151,28 L219,28 L219,86 L151,86 Z",
     "file": "pomieszczenia/pietro-1/bez-numeru-1.svg",
-    "number": null,
+    "number": "102a",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "102a"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-bez-numeru-2",
     "room_id": "bez-numeru-2",
-    "name": null,
+    "name": "102b",
     "category": "room",
     "d": "M224,28 L297,28 L297,86 L224,86 Z",
     "file": "pomieszczenia/pietro-1/bez-numeru-2.svg",
-    "number": null,
+    "number": "102b",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "102b"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-103",
     "room_id": "103",
-    "name": "103 – Spotkania absolwentów",
+    "name": "103",
     "category": "room",
     "d": "M302,28 L397,28 L397,86 L302,86 Z",
     "file": "pomieszczenia/pietro-1/103.svg",
     "number": "103",
-    "roomName": "Spotkania absolwentów",
-    "displayName": "103 – Spotkania absolwentów"
+    "roomName": null,
+    "displayName": "103"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-bez-numeru-3",
     "room_id": "bez-numeru-3",
-    "name": null,
+    "name": "Szatnia",
     "category": "room",
     "d": "M402,28 L423,28 L423,86 L402,86 Z",
     "file": "pomieszczenia/pietro-1/bez-numeru-3.svg",
     "number": null,
-    "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "roomName": "Szatnia",
+    "displayName": "Szatnia"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-104",
     "room_id": "104",
-    "name": "104 – Lingwistyka",
+    "name": "104",
     "category": "room",
     "d": "M428,28 L523,28 L523,86 L428,86 Z",
     "file": "pomieszczenia/pietro-1/104.svg",
     "number": "104",
-    "roomName": "Lingwistyka",
-    "displayName": "104 – Lingwistyka"
+    "roomName": null,
+    "displayName": "104"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-105",
     "room_id": "105",
-    "name": "105 – Lingwistyka",
+    "name": "105",
     "category": "room",
     "d": "M528,28 L624,28 L624,86 L528,86 Z",
     "file": "pomieszczenia/pietro-1/105.svg",
     "number": "105",
-    "roomName": "Lingwistyka",
-    "displayName": "105 – Lingwistyka"
+    "roomName": null,
+    "displayName": "105"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-106",
     "room_id": "106",
-    "name": "106 – Spotkania absolwentów",
+    "name": "106",
     "category": "room",
     "d": "M629,28 L725,28 L725,86 L629,86 Z",
     "file": "pomieszczenia/pietro-1/106.svg",
     "number": "106",
-    "roomName": "Spotkania absolwentów",
-    "displayName": "106 – Spotkania absolwentów"
+    "roomName": null,
+    "displayName": "106"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-107",
     "room_id": "107",
-    "name": "107 – Spotkania absolwentów",
+    "name": "107",
     "category": "room",
     "d": "M731,55 L827,55 L827,111 L731,111 Z",
     "file": "pomieszczenia/pietro-1/107.svg",
     "number": "107",
-    "roomName": "Spotkania absolwentów",
-    "displayName": "107 – Spotkania absolwentów"
+    "roomName": null,
+    "displayName": "107"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-108",
     "room_id": "108",
-    "name": "108 – Spotkania absolwentów",
+    "name": "108",
     "category": "room",
     "d": "M832,55 L927,55 L927,111 L832,111 Z",
     "file": "pomieszczenia/pietro-1/108.svg",
     "number": "108",
-    "roomName": "Spotkania absolwentów",
-    "displayName": "108 – Spotkania absolwentów"
+    "roomName": null,
+    "displayName": "108"
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-109",
     "room_id": "109",
-    "name": "109 – Sala Kinowa",
+    "name": "109",
     "category": "room",
     "d": "M934,55 L995,55 L995,144 L934,144 Z",
     "file": "pomieszczenia/pietro-1/109.svg",
     "number": "109",
-    "roomName": "Sala Kinowa",
-    "displayName": "109 – Sala Kinowa"
+    "roomName": null,
+    "displayName": "109"
   },
   {
     "level": "pietro-1",
@@ -1395,13 +1335,13 @@
     "level": "pietro-1",
     "id": "pietro-1-bez-numeru-6",
     "room_id": "bez-numeru-6",
-    "name": null,
+    "name": "111",
     "category": "room",
     "d": "M731,150 L803,150 L803,208 L731,208 Z",
     "file": "pomieszczenia/pietro-1/bez-numeru-6.svg",
-    "number": null,
+    "number": "111",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "111"
   },
   {
     "level": "pietro-1",
@@ -1419,37 +1359,37 @@
     "level": "pietro-1",
     "id": "pietro-1-110",
     "room_id": "110",
-    "name": "110 – pok. nauczycielski",
+    "name": "pok. nauczy.",
     "category": "room",
     "d": "M833,150 L917,150 L917,167 L929,167 L929,208 L833,208 Z",
     "file": "pomieszczenia/pietro-1/110.svg",
-    "number": "110",
-    "roomName": "pok. nauczycielski",
-    "displayName": "110 – pok. nauczycielski"
+    "number": null,
+    "roomName": "pok. nauczy.",
+    "displayName": "pok. nauczy."
   },
   {
     "level": "pietro-1",
     "id": "pietro-1-bez-numeru-8",
     "room_id": "bez-numeru-8",
-    "name": null,
+    "name": "110a",
     "category": "room",
     "d": "M935,150 L978,150 L978,208 L935,208 Z",
     "file": "pomieszczenia/pietro-1/bez-numeru-8.svg",
-    "number": null,
+    "number": "110a",
     "roomName": null,
-    "displayName": "Pomieszczenie bez opisu"
+    "displayName": "110a"
   },
   {
     "level": "pietro-2",
     "id": "pietro-2-201",
     "room_id": "201",
-    "name": "201 – Spotkania absolwentów",
+    "name": "201",
     "category": "room",
     "d": "M45,17 L141,17 L141,74 L45,74 Z",
     "file": "pomieszczenia/pietro-2/201.svg",
     "number": "201",
-    "roomName": "Spotkania absolwentów",
-    "displayName": "201 – Spotkania absolwentów"
+    "roomName": null,
+    "displayName": "201"
   },
   {
     "level": "pietro-2",
@@ -1467,13 +1407,13 @@
     "level": "pietro-2",
     "id": "pietro-2-202",
     "room_id": "202",
-    "name": "202 – Geografia",
+    "name": "202",
     "category": "room",
     "d": "M172,17 L267,17 L267,74 L172,74 Z",
     "file": "pomieszczenia/pietro-2/202.svg",
     "number": "202",
-    "roomName": "Geografia",
-    "displayName": "202 – Geografia"
+    "roomName": null,
+    "displayName": "202"
   },
   {
     "level": "pietro-2",
@@ -1491,13 +1431,13 @@
     "level": "pietro-2",
     "id": "pietro-2-203",
     "room_id": "203",
-    "name": "203 – Matematyka",
+    "name": "203",
     "category": "room",
     "d": "M296,17 L391,17 L391,74 L296,74 Z",
     "file": "pomieszczenia/pietro-2/203.svg",
     "number": "203",
-    "roomName": "Matematyka",
-    "displayName": "203 – Matematyka"
+    "roomName": null,
+    "displayName": "203"
   },
   {
     "level": "pietro-2",
@@ -1515,85 +1455,85 @@
     "level": "pietro-2",
     "id": "pietro-2-204",
     "room_id": "204",
-    "name": "204 – Matematyka",
+    "name": "204",
     "category": "room",
     "d": "M421,17 L517,17 L517,74 L421,74 Z",
     "file": "pomieszczenia/pietro-2/204.svg",
     "number": "204",
-    "roomName": "Matematyka",
-    "displayName": "204 – Matematyka"
+    "roomName": null,
+    "displayName": "204"
   },
   {
     "level": "pietro-2",
     "id": "pietro-2-205",
     "room_id": "205",
-    "name": "205 – Polski",
+    "name": "205",
     "category": "room",
     "d": "M522,17 L617,17 L617,74 L522,74 Z",
     "file": "pomieszczenia/pietro-2/205.svg",
     "number": "205",
-    "roomName": "Polski",
-    "displayName": "205 – Polski"
+    "roomName": null,
+    "displayName": "205"
   },
   {
     "level": "pietro-2",
     "id": "pietro-2-206",
     "room_id": "206",
-    "name": "206 – Matematyka",
+    "name": "206",
     "category": "room",
     "d": "M621,17 L716,17 L716,74 L621,74 Z",
     "file": "pomieszczenia/pietro-2/206.svg",
     "number": "206",
-    "roomName": "Matematyka",
-    "displayName": "206 – Matematyka"
+    "roomName": null,
+    "displayName": "206"
   },
   {
     "level": "pietro-2",
     "id": "pietro-2-207",
     "room_id": "207",
-    "name": "207 – Polski",
+    "name": "207",
     "category": "room",
     "d": "M723,44 L818,44 L818,101 L723,101 Z",
     "file": "pomieszczenia/pietro-2/207.svg",
     "number": "207",
-    "roomName": "Polski",
-    "displayName": "207 – Polski"
+    "roomName": null,
+    "displayName": "207"
   },
   {
     "level": "pietro-2",
     "id": "pietro-2-208",
     "room_id": "208",
-    "name": "208 – humor zeszytów",
+    "name": "208",
     "category": "room",
     "d": "M823,44 L917,44 L917,101 L823,101 Z",
     "file": "pomieszczenia/pietro-2/208.svg",
     "number": "208",
-    "roomName": "humor zeszytów",
-    "displayName": "208 – humor zeszytów"
+    "roomName": null,
+    "displayName": "208"
   },
   {
     "level": "pietro-2",
     "id": "pietro-2-209",
     "room_id": "209",
-    "name": "209 – strzelnica wirtualna",
+    "name": "209",
     "category": "room",
     "d": "M923,44 L984,44 L984,132 L923,132 Z",
     "file": "pomieszczenia/pietro-2/209.svg",
     "number": "209",
-    "roomName": "strzelnica wirtualna",
-    "displayName": "209 – strzelnica wirtualna"
+    "roomName": null,
+    "displayName": "209"
   },
   {
     "level": "pietro-2",
     "id": "pietro-2-wc",
     "room_id": "wc",
-    "name": "WC",
+    "name": "WC / umywalnia",
     "category": "wc",
     "d": "M616,140 L667,140 L667,195 L616,195 Z",
     "file": "pomieszczenia/pietro-2/wc.svg",
     "number": null,
-    "roomName": "WC",
-    "displayName": "WC"
+    "roomName": "WC / umywalnia",
+    "displayName": "WC / umywalnia"
   },
   {
     "level": "pietro-2",
@@ -1611,13 +1551,13 @@
     "level": "pietro-2",
     "id": "pietro-2-211",
     "room_id": "211",
-    "name": "211 – 80 modeli na 80-lecie",
+    "name": "211",
     "category": "room",
     "d": "M749,139 L844,139 L844,195 L749,195 Z",
     "file": "pomieszczenia/pietro-2/211.svg",
     "number": "211",
-    "roomName": "80 modeli na 80-lecie",
-    "displayName": "211 – 80 modeli na 80-lecie"
+    "roomName": null,
+    "displayName": "211"
   },
   {
     "level": "pietro-2",
@@ -1635,12 +1575,12 @@
     "level": "pietro-2",
     "id": "pietro-2-210",
     "room_id": "210",
-    "name": "210 – Szachy",
+    "name": "210",
     "category": "room",
     "d": "M873,139 L967,139 L967,195 L873,195 Z",
     "file": "pomieszczenia/pietro-2/210.svg",
     "number": "210",
-    "roomName": "Szachy",
-    "displayName": "210 – Szachy"
+    "roomName": null,
+    "displayName": "210"
   }
 ]

@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="../../style.css"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="353 406 52 48"><g id="rooms"><path id="parter-bez-numeru-17" class="room" data-room-id="bez-numeru-17" data-level="parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M357,410 L401,410 L401,450 L357,450 Z"><title>Pomieszczenie bez opisu</title></path></g><g id="labels"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="353 406 52 48"><g id="rooms"><path id="parter-bez-numeru-17" class="room" data-room-id="bez-numeru-17" data-level="parter" data-name="Studio RTV" fill-rule="evenodd" clip-rule="evenodd" d="M357,410 L401,410 L401,450 L357,450 Z"><title>Studio RTV</title></path></g><g id="labels"><text class="room-label label-size-9"><tspan x="379" y="427.70" class="label-name">Studio</tspan><tspan x="379" y="438.06" class="label-name">RTV</tspan></text></g></svg>
