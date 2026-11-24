@@ -1,0 +1,219 @@
+/* MOTYW MAPY SZKOŁY V5
+   Edytuj wartości poniżej – zmiany obejmują wszystkie kondygnacje,
+   pomieszczenia, nawigację oraz interfejs. Geometria i graf są osobno. */
+:root {
+  /* Kolory mapy, trasy i interfejsu */
+  --page-bg: #f5f4f6;
+  --ui-text: #34313a;
+  --muted-text: #66616c;
+  --surface: white;
+  --button-border: #d2cdd7;
+  --button-text: #51465f;
+  --tab-active: #786698;
+  --panel-border: #e2dfe5;
+  --small-text: #777;
+  --input-border: #b9b4c3;
+  --focus-color: #8974b5;
+  --dropdown-shadow: #27203625;
+  --suggestion-hover: #eee9f7;
+  --primary: #65518d;
+  --error: #a23b3b;
+  --route-step-border: #166cbe;
+  --route: #1676d2;
+  --destination-fill: #b4dcfa;
+  --origin-fill: #b9e2cf;
+  --origin: #168353;
+  --note-text: #6e6578;
+  --route-on-active: #bde0ff;
+  --metric: #51416f;
+  --route-text: #333;
+  --uncertain: #db770e;
+  --graph-line: #089a87;
+  --graph-text: #704300;
+  --stairs-hover: #d5c9f0;
+  --stairs-hover-stroke: #513586;
+  --stairs-active-fill: #a9d7fb;
+  --stairs-panel-border: #d9e4ef;
+  --stairs-panel-bg: #f6f9fc;
+  --destination: #d54c4c;
+  --stairs: #7357a5;
+  --stairs-fill: #ddd6ee;
+  --graph-door: #07897d;
+  --graph-stairs: #7251af;
+  --floor-fill: #f2f1ef;
+  --floor-stroke: #a5a2a6;
+  --room-fill: #dbdbdb;
+  --room-stroke: #a3a1a5;
+  --wc-fill: #c9dce0;
+  --outdoor-fill: #e5e8e1;
+  --amenity-fill: #d9d0e4;
+  --sport-fill: #d5dbce;
+  --room-hover-fill: #b8aed1;
+  --room-hover-stroke: #7c679f;
+  --room-selected-fill: #9884b7;
+  --room-selected-stroke: #6f5893;
+  --detail-fill: #e4e1df;
+  --label-color: #48444d;
+  --entrance-color: #806d9d;
+  /* Typografia */
+  --ui-font: system-ui, Arial, sans-serif;
+  --map-font: Arial, sans-serif;
+  --label-size: 13px;
+  --label-number-weight: 700;
+  --label-name-weight: 400;
+  --entrance-size: 11px;
+  --stairs-label-size: 10px;
+  --graph-font-size: 8px;
+  /* Linie, obramowania i znaczniki */
+  --floor-stroke-width: 1.5;
+  --room-stroke-width: 1.1;
+  --focus-width: 2.4;
+  --detail-solid-width: 1;
+  --detail-line-width: .8;
+  --entrance-width: 2;
+  --stairs-width: 1.5;
+  --stairs-opacity: .40;
+  --stairs-radius: 3px;
+  --stairs-marker-radius: 9px;
+  --route-width: 5;
+  --route-halo-width: 9;
+  --route-marker-radius: 7px;
+  --route-stair-radius: 10px;
+  --graph-width: 1.8;
+  --graph-door-radius: 2.5px;
+  --graph-node-radius: 4px;
+  --hover-duration: .16s;
+  /* Układ strony */
+  --page-width: 1300px;
+  --sidebar-width: 255px;
+  --map-max-height: 75vh;
+  --panel-radius: 8px;
+}
+
+/* 2. SVG – wspólne style wszystkich kondygnacji i pojedynczych sal */
+.floor-outline { fill:var(--floor-fill); stroke:var(--floor-stroke); stroke-width:var(--floor-stroke-width); stroke-linejoin:round; }
+.room { fill:var(--room-fill); stroke:var(--room-stroke); stroke-width:var(--room-stroke-width); stroke-linejoin:round; cursor:pointer; transition:fill var(--hover-duration) ease; outline:none; }
+.room.wc { fill:var(--wc-fill); }
+.room.outdoor { fill:var(--outdoor-fill); }
+.room.amenity { fill:var(--amenity-fill); }
+.room.sport { fill:var(--sport-fill); }
+.room:hover,.room:focus-visible { fill:var(--room-hover-fill); stroke:var(--room-hover-stroke); }
+.room:focus-visible { stroke-width:var(--focus-width); }
+.room.selected { fill:var(--room-selected-fill); stroke:var(--room-selected-stroke); }
+.room-label { pointer-events:none; user-select:none; text-anchor:middle; font-family:var(--map-font); font-size:var(--label-size); fill:var(--label-color); }
+.label-size-7 { font-size:calc(var(--label-size) * 7 / 13); }
+.label-size-9 { font-size:calc(var(--label-size) * 9 / 13); }
+.label-size-11 { font-size:calc(var(--label-size) * 11 / 13); }
+.label-size-17 { font-size:calc(var(--label-size) * 17 / 13); }
+.label-number { font-weight:var(--label-number-weight); }
+.label-name { font-weight:var(--label-name-weight); }
+.detail-solid { fill:var(--detail-fill); stroke:var(--room-stroke); stroke-width:var(--detail-solid-width); }
+.detail-line { fill:none; stroke:var(--room-stroke); stroke-width:var(--detail-line-width); }
+.entrance-arrow { fill:none; stroke:var(--entrance-color); stroke-width:var(--entrance-width); }
+.entrance-label { text-anchor:middle; font-family:var(--map-font); font-size:var(--entrance-size); fill:var(--entrance-color); }
+.stair-target rect { fill:var(--stairs-fill); fill-opacity:var(--stairs-opacity); stroke:var(--stairs); stroke-width:var(--stairs-width); rx:var(--stairs-radius); }
+.stair-target circle { fill:var(--stairs); stroke:var(--surface); stroke-width:var(--stairs-width); r:var(--stairs-marker-radius); }
+.stair-target text { text-anchor:middle; font-family:var(--map-font); font-size:var(--stairs-label-size); font-weight:var(--label-number-weight); fill:var(--surface); }
+
+/* 3. Interfejs, wyszukiwarka, trasa i stany aktywne */
+
+*{box-sizing:border-box}
+body{font-family:var(--ui-font);margin:0;background:var(--page-bg);color:var(--ui-text)}
+main{max-width:var(--page-width);margin:auto;padding:24px}
+h1{font-size:24px;margin:0 0 6px}
+p{margin:0 0 16px;color:var(--muted-text)}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+button{border:1px solid var(--button-border);border-radius:5px;padding:10px 14px;background:var(--surface);color:var(--button-text);font:inherit;cursor:pointer}
+button[aria-selected=true]{background:var(--tab-active);color:var(--surface);border-color:var(--tab-active)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) var(--sidebar-width);gap:14px}
+.map{background:var(--surface);border:1px solid var(--panel-border);border-radius:var(--panel-radius);padding:12px;min-height:280px;display:grid;align-items:center}
+.map svg{width:100%;height:auto;max-height:var(--map-max-height)}
+aside{background:var(--surface);border:1px solid var(--panel-border);padding:16px;border-radius:var(--panel-radius);overflow-wrap:anywhere}
+aside h2{font-size:16px;margin-top:0}
+code{font-size:12px}
+small{color:var(--small-text)}
+ [hidden]{display:none!important}
+@media(max-width:780px){main{padding:14px}
+.layout{grid-template-columns:1fr}
+}
+
+
+.routing{background:var(--surface);border:1px solid var(--panel-border);border-radius:10px;padding:16px;margin:20px 0 12px}
+.fields{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+.field{position:relative;min-width:0}
+.field label{display:block;font-size:13px;font-weight:650;margin-bottom:6px}
+.field input{width:100%;padding:12px;border:1px solid var(--input-border);border-radius:6px;font:inherit;color:var(--ui-text)}
+.field input:focus{outline:2px solid var(--focus-color);outline-offset:1px}
+.suggestions{position:absolute;z-index:5;background:var(--surface);box-shadow:0 8px 24px var(--dropdown-shadow);border:1px solid var(--button-border);border-radius:6px;top:100%;left:0;right:0;max-height:265px;overflow:auto}
+.suggestions button{display:block;text-align:left;border:0;width:100%;border-radius:0;padding:9px 12px}
+.suggestions button.active,.suggestions button:hover{background:var(--suggestion-hover)}
+.suggestions small{display:block;font-size:12px}
+.primary{background:var(--primary);color:var(--surface);border-color:var(--primary);font-weight:650;padding:12px 17px}
+.route-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:12px;font-size:13px}
+.route-tools label{display:flex;align-items:center;gap:6px}
+.route-tools input[type=number]{width:85px;padding:6px;border:1px solid var(--input-border);border-radius:4px}
+.route-status{margin:12px 0 0;font-size:14px;line-height:1.5}
+.route-status:empty{display:none}
+.route-status.error{color:var(--error)}
+.route-steps{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.route-steps button{font-size:13px;padding:8px 10px}
+.route-steps button.current{border:2px solid var(--route-step-border)}
+.route-layer{pointer-events:none}
+.route-line{fill:none;stroke:var(--route);stroke-width:var(--route-width);stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.route-halo{fill:none;stroke:var(--surface);stroke-width:var(--route-halo-width);stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.room.destination{fill:var(--destination-fill);stroke:var(--route);stroke-width:2}
+.room.origin{fill:var(--origin-fill);stroke:var(--origin);stroke-width:2}
+.map{overflow:hidden}
+.route-note{font-size:12px;color:var(--note-text);margin:8px 0 0}
+.nav-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.nav-actions button{font-size:13px;padding:8px 10px}
+nav button.on-route:after{content:' •';color:var(--route);font-weight:bold}
+nav button[aria-selected=true].on-route:after{color:var(--route-on-active)}
+.metric{font-size:23px;font-weight:700;color:var(--metric)}
+.legends{font-size:12px;display:flex;gap:13px;flex-wrap:wrap;margin-top:12px}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.route-layer text{font-family:var(--ui-font);font-weight:700;paint-order:stroke;stroke:var(--surface);stroke-width:3;stroke-linejoin:round;font-size:12px;fill:var(--route-text)}
+.route-marker{stroke:var(--surface);stroke-width:2;vector-effect:non-scaling-stroke}
+.route-layer .route-caption{font-size:11px}
+@media(max-width:650px){.fields{grid-template-columns:1fr}
+.primary{width:100%}
+.routing{padding:12px}
+}
+
+.route-uncertain{stroke:var(--uncertain)!important;stroke-dasharray:8 5}
+.graph-layer{pointer-events:none}
+.graph-layer line{stroke:var(--graph-line);stroke-width:var(--graph-width);opacity:.8}
+.graph-layer line.uncertain{stroke:var(--uncertain);stroke-dasharray:5 4}
+.graph-layer circle{stroke:var(--surface);stroke-width:1}
+.graph-layer text{font:var(--graph-font-size) var(--map-font);fill:var(--graph-text)}
+.graph-layer[hidden]{display:none!important}
+.stair-target{cursor:pointer;outline:none}
+.stair-target:hover rect,.stair-target:focus-visible rect{fill:var(--stairs-hover);stroke:var(--stairs-hover-stroke);stroke-width:2.5}
+.stair-target.used rect{fill:var(--stairs-active-fill);fill-opacity:.7;stroke:var(--route);stroke-width:2.5}
+.stair-target.used circle{fill:var(--route)}
+.stair-target text{pointer-events:none}
+.stair-panel{padding:12px 14px;border:1px solid var(--stairs-panel-border);background:var(--stairs-panel-bg);border-radius:var(--panel-radius);margin:12px 0;font-size:14px;line-height:1.45}
+.stair-panel[hidden]{display:none}
+.stair-panel strong{display:block;margin-bottom:4px}
+.stair-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.stair-controls button{padding:8px 12px}
+.stair-controls button.next{background:var(--route);color:var(--surface);border-color:var(--route)}
+.route-stair-ring{fill:var(--surface);stroke:var(--route);stroke-width:2.5;vector-effect:non-scaling-stroke}
+.route-stair-text{font-size:11px!important;fill:var(--route)!important;stroke:none!important}
+.route-steps button{max-width:100%;text-align:left}
+.route-steps button small{display:block;font-size:11px;font-weight:400;margin-top:3px}
+
+/* 4. Elementy tworzone dynamicznie przez JavaScript */
+.route-marker { r:var(--route-marker-radius); }
+.route-marker.marker-origin { fill:var(--origin); }
+.route-marker.marker-destination { fill:var(--destination); }
+.route-marker.marker-uncertain { fill:var(--uncertain); }
+.route-stair-ring { r:var(--route-stair-radius); }
+.graph-node-door { fill:var(--graph-door); r:var(--graph-door-radius); }
+.graph-node-stairs { fill:var(--graph-stairs); r:var(--graph-node-radius); }
+.graph-node-transfer { fill:var(--uncertain); r:var(--graph-node-radius); }
+.legend-stairs { background:var(--stairs); }
+.legend-origin { background:var(--origin); }
+.legend-route { background:var(--route); }
+.legend-destination { background:var(--destination); }
+.aside-note { margin-top:20px; }

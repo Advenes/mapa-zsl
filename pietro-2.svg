@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 -8 989 229" data-plan-level-svg="pietro-2" aria-label="II piętro">
+<title>II piętro</title><g id="floors" data-location="website">
+<path class="floor-outline" d="M40,12 L723,12 L723,39 L989,39 L989,138 L972,138 L972,201 L611,201 L611,107 L145,107 L145,163 L108,163 L108,80 L40,80 Z"/>
+</g><g id="rooms">
+<path id="pietro-2-201" class="room" data-room-id="201" data-level="pietro-2" data-name="201 – Spotkania absolwentów" fill-rule="evenodd" clip-rule="evenodd" d="M45,17 L141,17 L141,74 L45,74 Z" tabindex="0" role="button" aria-label="201 – Spotkania absolwentów"><title>201 – Spotkania absolwentów</title></path>
+<path id="pietro-2-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M147,17 L168,17 L168,74 L147,74 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-2-202" class="room" data-room-id="202" data-level="pietro-2" data-name="202 – Geografia" fill-rule="evenodd" clip-rule="evenodd" d="M172,17 L267,17 L267,74 L172,74 Z" tabindex="0" role="button" aria-label="202 – Geografia"><title>202 – Geografia</title></path>
+<path id="pietro-2-bez-numeru-2" class="room" data-room-id="bez-numeru-2" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M271,17 L292,17 L292,74 L271,74 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-2-203" class="room" data-room-id="203" data-level="pietro-2" data-name="203 – Matematyka" fill-rule="evenodd" clip-rule="evenodd" d="M296,17 L391,17 L391,74 L296,74 Z" tabindex="0" role="button" aria-label="203 – Matematyka"><title>203 – Matematyka</title></path>
+<path id="pietro-2-bez-numeru-3" class="room" data-room-id="bez-numeru-3" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M395,17 L416,17 L416,74 L395,74 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-2-204" class="room" data-room-id="204" data-level="pietro-2" data-name="204 – Matematyka" fill-rule="evenodd" clip-rule="evenodd" d="M421,17 L517,17 L517,74 L421,74 Z" tabindex="0" role="button" aria-label="204 – Matematyka"><title>204 – Matematyka</title></path>
+<path id="pietro-2-205" class="room" data-room-id="205" data-level="pietro-2" data-name="205 – Polski" fill-rule="evenodd" clip-rule="evenodd" d="M522,17 L617,17 L617,74 L522,74 Z" tabindex="0" role="button" aria-label="205 – Polski"><title>205 – Polski</title></path>
+<path id="pietro-2-206" class="room" data-room-id="206" data-level="pietro-2" data-name="206 – Matematyka" fill-rule="evenodd" clip-rule="evenodd" d="M621,17 L716,17 L716,74 L621,74 Z" tabindex="0" role="button" aria-label="206 – Matematyka"><title>206 – Matematyka</title></path>
+<path id="pietro-2-207" class="room" data-room-id="207" data-level="pietro-2" data-name="207 – Polski" fill-rule="evenodd" clip-rule="evenodd" d="M723,44 L818,44 L818,101 L723,101 Z" tabindex="0" role="button" aria-label="207 – Polski"><title>207 – Polski</title></path>
+<path id="pietro-2-208" class="room" data-room-id="208" data-level="pietro-2" data-name="208 – humor zeszytów" fill-rule="evenodd" clip-rule="evenodd" d="M823,44 L917,44 L917,101 L823,101 Z" tabindex="0" role="button" aria-label="208 – humor zeszytów"><title>208 – humor zeszytów</title></path>
+<path id="pietro-2-209" class="room" data-room-id="209" data-level="pietro-2" data-name="209 – strzelnica wirtualna" fill-rule="evenodd" clip-rule="evenodd" d="M923,44 L984,44 L984,132 L923,132 Z" tabindex="0" role="button" aria-label="209 – strzelnica wirtualna"><title>209 – strzelnica wirtualna</title></path>
+<path id="pietro-2-wc" class="room wc" data-room-id="wc" data-level="pietro-2" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M616,140 L667,140 L667,195 L616,195 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
+<path id="pietro-2-bez-numeru-4" class="room" data-room-id="bez-numeru-4" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M723,139 L744,139 L744,195 L723,195 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-2-211" class="room" data-room-id="211" data-level="pietro-2" data-name="211 – 80 modeli na 80-lecie" fill-rule="evenodd" clip-rule="evenodd" d="M749,139 L844,139 L844,195 L749,195 Z" tabindex="0" role="button" aria-label="211 – 80 modeli na 80-lecie"><title>211 – 80 modeli na 80-lecie</title></path>
+<path id="pietro-2-bez-numeru-5" class="room" data-room-id="bez-numeru-5" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M848,139 L868,139 L868,195 L848,195 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-2-210" class="room" data-room-id="210" data-level="pietro-2" data-name="210 – Szachy" fill-rule="evenodd" clip-rule="evenodd" d="M873,139 L967,139 L967,195 L873,195 Z" tabindex="0" role="button" aria-label="210 – Szachy"><title>210 – Szachy</title></path>
+</g><g id="details" pointer-events="none">
+<path d="M114,111 L140,111 L140,157 L114,157 Z" class="detail-solid"/>
+<path d="M114,115 H140" class="detail-line"/>
+<path d="M114,119 H140" class="detail-line"/>
+<path d="M114,123 H140" class="detail-line"/>
+<path d="M114,127 H140" class="detail-line"/>
+<path d="M114,131 H140" class="detail-line"/>
+<path d="M114,135 H140" class="detail-line"/>
+<path d="M114,139 H140" class="detail-line"/>
+<path d="M114,143 H140" class="detail-line"/>
+<path d="M114,147 H140" class="detail-line"/>
+<path d="M114,151 H140" class="detail-line"/>
+<path d="M114,155 H140" class="detail-line"/>
+<path d="M627,107 L667,107 L667,134 L627,134 Z" class="detail-solid"/>
+<path d="M631,107 V134" class="detail-line"/>
+<path d="M635,107 V134" class="detail-line"/>
+<path d="M639,107 V134" class="detail-line"/>
+<path d="M643,107 V134" class="detail-line"/>
+<path d="M647,107 V134" class="detail-line"/>
+<path d="M651,107 V134" class="detail-line"/>
+<path d="M655,107 V134" class="detail-line"/>
+<path d="M659,107 V134" class="detail-line"/>
+<path d="M663,107 V134" class="detail-line"/>
+</g><g id="labels" aria-hidden="true">
+<text class="room-label"><tspan x="93" y="34.71" class="label-number">201</tspan><tspan x="93" y="49.66" class="label-name">Spotkania</tspan><tspan x="93" y="64.61" class="label-name">absolwentów</tspan></text>
+
+<text class="room-label"><tspan x="219.5" y="42.19" class="label-number">202</tspan><tspan x="219.5" y="57.14" class="label-name">Geografia</tspan></text>
+
+<text class="room-label"><tspan x="343.5" y="42.19" class="label-number">203</tspan><tspan x="343.5" y="57.14" class="label-name">Matematyka</tspan></text>
+
+<text class="room-label"><tspan x="469" y="42.19" class="label-number">204</tspan><tspan x="469" y="57.14" class="label-name">Matematyka</tspan></text>
+<text class="room-label"><tspan x="569.5" y="42.19" class="label-number">205</tspan><tspan x="569.5" y="57.14" class="label-name">Polski</tspan></text>
+<text class="room-label"><tspan x="668.5" y="42.19" class="label-number">206</tspan><tspan x="668.5" y="57.14" class="label-name">Matematyka</tspan></text>
+<text class="room-label"><tspan x="770.5" y="69.19" class="label-number">207</tspan><tspan x="770.5" y="84.14" class="label-name">Polski</tspan></text>
+<text class="room-label"><tspan x="870" y="61.71" class="label-number">208</tspan><tspan x="870" y="76.66" class="label-name">humor</tspan><tspan x="870" y="91.61" class="label-name">zeszytów</tspan></text>
+<text class="room-label label-size-11"><tspan x="953.5" y="78.87" class="label-number">209</tspan><tspan x="953.5" y="91.52" class="label-name">strzelnica</tspan><tspan x="953.5" y="104.17" class="label-name">wirtualna</tspan></text>
+<text class="room-label"><tspan x="641.5" y="171.66" class="label-name">WC</tspan></text>
+
+<text class="room-label"><tspan x="796.5" y="156.21" class="label-number">211</tspan><tspan x="796.5" y="171.16" class="label-name">80 modeli na</tspan><tspan x="796.5" y="186.11" class="label-name">80-lecie</tspan></text>
+
+<text class="room-label"><tspan x="920" y="163.69" class="label-number">210</tspan><tspan x="920" y="178.63" class="label-name">Szachy</tspan></text>
+</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="pietro-2" data-node="n417" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="114" y="111" width="26" height="46"/><circle cx="127.0" cy="133.0"/><text x="127.0" y="136.5">A</text></g><g class="stair-target" data-stair="B" data-stair-level="pietro-2" data-node="n418" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="627" y="107" width="40" height="27"/><circle cx="647.0" cy="120.0"/><text x="647.0" y="123.5">B</text></g></g></svg>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 26 1005 232" data-plan-level-svg="niski-parter" aria-label="Niski parter">
+<title>Niski parter</title><g id="floors" data-location="website">
+<path class="floor-outline" d="M44,46 L119,46 L119,68 L148,68 L148,46 L739,46 L739,74 L1009,74 L1009,215 L994,215 L994,238 L625,238 L625,140 L151,140 L151,200 L114,200 L114,114 L44,114 Z"/>
+</g><g id="rooms">
+<path id="niski-parter-01" class="room" data-room-id="01" data-level="niski-parter" data-name="01 – ciemnia" fill-rule="evenodd" clip-rule="evenodd" d="M49,51 L115,51 L115,109 L49,109 Z" tabindex="0" role="button" aria-label="01 – ciemnia"><title>01 – ciemnia</title></path>
+<path id="niski-parter-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M152,51 L202,51 L202,109 L152,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-031" class="room" data-room-id="031" data-level="niski-parter" data-name="031 – Bufet" fill-rule="evenodd" clip-rule="evenodd" d="M222,51 L297,51 L297,109 L206,109 L206,94 L232,94 L232,79 L222,79 Z" tabindex="0" role="button" aria-label="031 – Bufet"><title>031 – Bufet</title></path>
+<path id="niski-parter-032" class="room" data-room-id="032" data-level="niski-parter" data-name="032 – Bufet" fill-rule="evenodd" clip-rule="evenodd" d="M301,51 L425,51 L425,109 L301,109 Z" tabindex="0" role="button" aria-label="032 – Bufet"><title>032 – Bufet</title></path>
+<path id="niski-parter-bez-numeru-2" class="room" data-room-id="bez-numeru-2" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M430,51 L453,51 L453,109 L430,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-3" class="room" data-room-id="bez-numeru-3" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M457,51 L478,51 L478,109 L457,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-4" class="room" data-room-id="bez-numeru-4" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M482,51 L504,51 L504,109 L482,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-5" class="room" data-room-id="bez-numeru-5" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M508,51 L530,51 L530,109 L508,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-036" class="room" data-room-id="036" data-level="niski-parter" data-name="036 – Rodzice" fill-rule="evenodd" clip-rule="evenodd" d="M534,51 L600,51 L600,109 L534,109 Z" tabindex="0" role="button" aria-label="036 – Rodzice"><title>036 – Rodzice</title></path>
+<path id="niski-parter-bez-numeru-6" class="room" data-room-id="bez-numeru-6" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M604,51 L626,51 L626,109 L604,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-7" class="room" data-room-id="bez-numeru-7" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M630,51 L657,51 L657,109 L630,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-8" class="room" data-room-id="bez-numeru-8" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M661,51 L681,51 L681,109 L661,109 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-9" class="room" data-room-id="bez-numeru-9" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M687,51 L707,51 L707,112 L687,112 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-10" class="room" data-room-id="bez-numeru-10" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M711,51 L733,51 L733,112 L711,112 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-11" class="room" data-room-id="bez-numeru-11" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M706,160 L733,160 L733,203 L706,203 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-12" class="room" data-room-id="bez-numeru-12" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M687,207 L733,207 L733,233 L687,233 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-wc" class="room wc" data-room-id="wc" data-level="niski-parter" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M629,178 L682,178 L682,233 L629,233 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
+<path id="niski-parter-bez-numeru-13" class="room" data-room-id="bez-numeru-13" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M739,79 L936,79 L936,232 L739,232 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-14" class="room" data-room-id="bez-numeru-14" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M942,79 L1004,79 L1004,146 L942,146 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-15" class="room" data-room-id="bez-numeru-15" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M942,151 L971,151 L971,169 L942,169 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-16" class="room" data-room-id="bez-numeru-16" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M976,151 L1004,151 L1004,169 L976,169 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="niski-parter-bez-numeru-17" class="room" data-room-id="bez-numeru-17" data-level="niski-parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M942,174 L988,174 L988,232 L942,232 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+</g><g id="details" pointer-events="none">
+<path d="M119,143 L146,143 L146,195 L119,195 Z" class="detail-solid"/>
+<path d="M119,147 H146" class="detail-line"/>
+<path d="M119,151 H146" class="detail-line"/>
+<path d="M119,155 H146" class="detail-line"/>
+<path d="M119,159 H146" class="detail-line"/>
+<path d="M119,163 H146" class="detail-line"/>
+<path d="M119,167 H146" class="detail-line"/>
+<path d="M119,171 H146" class="detail-line"/>
+<path d="M119,175 H146" class="detail-line"/>
+<path d="M119,179 H146" class="detail-line"/>
+<path d="M119,183 H146" class="detail-line"/>
+<path d="M119,187 H146" class="detail-line"/>
+<path d="M119,191 H146" class="detail-line"/>
+<path d="M629,142 L682,142 L682,173 L629,173 Z" class="detail-solid"/>
+<path d="M633,142 V173" class="detail-line"/>
+<path d="M637,142 V173" class="detail-line"/>
+<path d="M641,142 V173" class="detail-line"/>
+<path d="M645,142 V173" class="detail-line"/>
+<path d="M649,142 V173" class="detail-line"/>
+<path d="M653,142 V173" class="detail-line"/>
+<path d="M657,142 V173" class="detail-line"/>
+<path d="M661,142 V173" class="detail-line"/>
+<path d="M665,142 V173" class="detail-line"/>
+<path d="M669,142 V173" class="detail-line"/>
+<path d="M673,142 V173" class="detail-line"/>
+<path d="M677,142 V173" class="detail-line"/>
+<path d="M681,142 V173" class="detail-line"/>
+<path d="M994,174 L1005,174 L1005,213 L994,213 Z" class="detail-solid"/>
+<path d="M994,178 H1005" class="detail-line"/>
+<path d="M994,182 H1005" class="detail-line"/>
+<path d="M994,186 H1005" class="detail-line"/>
+<path d="M994,190 H1005" class="detail-line"/>
+<path d="M994,194 H1005" class="detail-line"/>
+<path d="M994,198 H1005" class="detail-line"/>
+<path d="M994,202 H1005" class="detail-line"/>
+<path d="M994,206 H1005" class="detail-line"/>
+<path d="M994,210 H1005" class="detail-line"/>
+</g><g id="labels" aria-hidden="true">
+<text class="room-label" transform="rotate(90 82 80)"><tspan x="82" y="76.69" class="label-number">01</tspan><tspan x="82" y="91.64" class="label-name">ciemnia</tspan></text>
+
+<text class="room-label"><tspan x="251.5" y="76.69" class="label-number">031</tspan><tspan x="251.5" y="91.64" class="label-name">Bufet</tspan></text>
+<text class="room-label"><tspan x="363" y="76.69" class="label-number">032</tspan><tspan x="363" y="91.64" class="label-name">Bufet</tspan></text>
+
+
+
+
+<text class="room-label"><tspan x="567" y="76.69" class="label-number">036</tspan><tspan x="567" y="91.64" class="label-name">Rodzice</tspan></text>
+
+
+
+
+
+
+
+<text class="room-label"><tspan x="655.5" y="209.66" class="label-name">WC</tspan></text>
+
+
+
+
+
+</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="niski-parter" data-node="n411" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="119" y="143" width="27" height="52"/><circle cx="133.0" cy="169.0"/><text x="133.0" y="172.5">A</text></g><g class="stair-target" data-stair="B" data-stair-level="niski-parter" data-node="n412" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="629" y="142" width="53" height="31"/><circle cx="655.0" cy="158.0"/><text x="655.0" y="161.5">B</text></g></g></svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="23 3 997 230" data-plan-level-svg="pietro-1" aria-label="I piętro">
+<title>I piętro</title><g id="floors" data-location="website">
+<path class="floor-outline" d="M43,23 L731,23 L731,50 L1000,50 L1000,150 L984,150 L984,213 L619,213 L619,117 L150,117 L150,176 L112,176 L112,91 L43,91 Z"/>
+</g><g id="rooms">
+<path id="pietro-1-101" class="room" data-room-id="101" data-level="pietro-1" data-name="101 – Pracownia druku 3-D" fill-rule="evenodd" clip-rule="evenodd" d="M48,28 L145,28 L145,66 L136,66 L136,86 L48,86 Z" tabindex="0" role="button" aria-label="101 – Pracownia druku 3-D"><title>101 – Pracownia druku 3-D</title></path>
+<path id="pietro-1-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M151,28 L219,28 L219,86 L151,86 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-bez-numeru-2" class="room" data-room-id="bez-numeru-2" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M224,28 L297,28 L297,86 L224,86 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-103" class="room" data-room-id="103" data-level="pietro-1" data-name="103 – Spotkania absolwentów" fill-rule="evenodd" clip-rule="evenodd" d="M302,28 L397,28 L397,86 L302,86 Z" tabindex="0" role="button" aria-label="103 – Spotkania absolwentów"><title>103 – Spotkania absolwentów</title></path>
+<path id="pietro-1-bez-numeru-3" class="room" data-room-id="bez-numeru-3" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M402,28 L423,28 L423,86 L402,86 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-104" class="room" data-room-id="104" data-level="pietro-1" data-name="104 – Lingwistyka" fill-rule="evenodd" clip-rule="evenodd" d="M428,28 L523,28 L523,86 L428,86 Z" tabindex="0" role="button" aria-label="104 – Lingwistyka"><title>104 – Lingwistyka</title></path>
+<path id="pietro-1-105" class="room" data-room-id="105" data-level="pietro-1" data-name="105 – Lingwistyka" fill-rule="evenodd" clip-rule="evenodd" d="M528,28 L624,28 L624,86 L528,86 Z" tabindex="0" role="button" aria-label="105 – Lingwistyka"><title>105 – Lingwistyka</title></path>
+<path id="pietro-1-106" class="room" data-room-id="106" data-level="pietro-1" data-name="106 – Spotkania absolwentów" fill-rule="evenodd" clip-rule="evenodd" d="M629,28 L725,28 L725,86 L629,86 Z" tabindex="0" role="button" aria-label="106 – Spotkania absolwentów"><title>106 – Spotkania absolwentów</title></path>
+<path id="pietro-1-107" class="room" data-room-id="107" data-level="pietro-1" data-name="107 – Spotkania absolwentów" fill-rule="evenodd" clip-rule="evenodd" d="M731,55 L827,55 L827,111 L731,111 Z" tabindex="0" role="button" aria-label="107 – Spotkania absolwentów"><title>107 – Spotkania absolwentów</title></path>
+<path id="pietro-1-108" class="room" data-room-id="108" data-level="pietro-1" data-name="108 – Spotkania absolwentów" fill-rule="evenodd" clip-rule="evenodd" d="M832,55 L927,55 L927,111 L832,111 Z" tabindex="0" role="button" aria-label="108 – Spotkania absolwentów"><title>108 – Spotkania absolwentów</title></path>
+<path id="pietro-1-109" class="room" data-room-id="109" data-level="pietro-1" data-name="109 – Sala Kinowa" fill-rule="evenodd" clip-rule="evenodd" d="M934,55 L995,55 L995,144 L934,144 Z" tabindex="0" role="button" aria-label="109 – Sala Kinowa"><title>109 – Sala Kinowa</title></path>
+<path id="pietro-1-wc" class="room wc" data-room-id="wc" data-level="pietro-1" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M624,153 L675,153 L675,175 L655,175 L655,208 L624,208 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
+<path id="pietro-1-bez-numeru-4" class="room" data-room-id="bez-numeru-4" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M659,180 L675,180 L675,193 L659,193 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-bez-numeru-5" class="room" data-room-id="bez-numeru-5" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M659,197 L675,197 L675,208 L659,208 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-bez-numeru-6" class="room" data-room-id="bez-numeru-6" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M731,150 L803,150 L803,208 L731,208 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-bez-numeru-7" class="room" data-room-id="bez-numeru-7" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M808,150 L828,150 L828,208 L808,208 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-110" class="room" data-room-id="110" data-level="pietro-1" data-name="110 – pok. nauczycielski" fill-rule="evenodd" clip-rule="evenodd" d="M833,150 L917,150 L917,167 L929,167 L929,208 L833,208 Z" tabindex="0" role="button" aria-label="110 – pok. nauczycielski"><title>110 – pok. nauczycielski</title></path>
+<path id="pietro-1-bez-numeru-8" class="room" data-room-id="bez-numeru-8" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M935,150 L978,150 L978,208 L935,208 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+</g><g id="details" pointer-events="none">
+<path d="M118,124 L144,124 L144,169 L118,169 Z" class="detail-solid"/>
+<path d="M118,128 H144" class="detail-line"/>
+<path d="M118,132 H144" class="detail-line"/>
+<path d="M118,136 H144" class="detail-line"/>
+<path d="M118,140 H144" class="detail-line"/>
+<path d="M118,144 H144" class="detail-line"/>
+<path d="M118,148 H144" class="detail-line"/>
+<path d="M118,152 H144" class="detail-line"/>
+<path d="M118,156 H144" class="detail-line"/>
+<path d="M118,160 H144" class="detail-line"/>
+<path d="M118,164 H144" class="detail-line"/>
+<path d="M118,168 H144" class="detail-line"/>
+<path d="M634,118 L675,118 L675,147 L634,147 Z" class="detail-solid"/>
+<path d="M638,118 V147" class="detail-line"/>
+<path d="M642,118 V147" class="detail-line"/>
+<path d="M646,118 V147" class="detail-line"/>
+<path d="M650,118 V147" class="detail-line"/>
+<path d="M654,118 V147" class="detail-line"/>
+<path d="M658,118 V147" class="detail-line"/>
+<path d="M662,118 V147" class="detail-line"/>
+<path d="M666,118 V147" class="detail-line"/>
+<path d="M670,118 V147" class="detail-line"/>
+<path d="M674,118 V147" class="detail-line"/>
+</g><g id="labels" aria-hidden="true">
+<text class="room-label"><tspan x="96.5" y="46.21" class="label-number">101</tspan><tspan x="96.5" y="61.16" class="label-name">Pracownia</tspan><tspan x="96.5" y="76.11" class="label-name">druku 3-D</tspan></text>
+
+
+<text class="room-label"><tspan x="349.5" y="46.21" class="label-number">103</tspan><tspan x="349.5" y="61.16" class="label-name">Spotkania</tspan><tspan x="349.5" y="76.11" class="label-name">absolwentów</tspan></text>
+
+<text class="room-label"><tspan x="475.5" y="53.69" class="label-number">104</tspan><tspan x="475.5" y="68.64" class="label-name">Lingwistyka</tspan></text>
+<text class="room-label"><tspan x="576" y="53.69" class="label-number">105</tspan><tspan x="576" y="68.64" class="label-name">Lingwistyka</tspan></text>
+<text class="room-label"><tspan x="677" y="46.21" class="label-number">106</tspan><tspan x="677" y="61.16" class="label-name">Spotkania</tspan><tspan x="677" y="76.11" class="label-name">absolwentów</tspan></text>
+<text class="room-label"><tspan x="779" y="72.21" class="label-number">107</tspan><tspan x="779" y="87.16" class="label-name">Spotkania</tspan><tspan x="779" y="102.11" class="label-name">absolwentów</tspan></text>
+<text class="room-label"><tspan x="879.5" y="72.21" class="label-number">108</tspan><tspan x="879.5" y="87.16" class="label-name">Spotkania</tspan><tspan x="879.5" y="102.11" class="label-name">absolwentów</tspan></text>
+<text class="room-label"><tspan x="964.5" y="88.71" class="label-number">109</tspan><tspan x="964.5" y="103.66" class="label-name">Sala</tspan><tspan x="964.5" y="118.61" class="label-name">Kinowa</tspan></text>
+<text class="room-label"><tspan x="649.5" y="184.66" class="label-name">WC</tspan></text>
+
+
+
+
+<text class="room-label"><tspan x="881" y="168.21" class="label-number">110</tspan><tspan x="881" y="183.16" class="label-name">pok.</tspan><tspan x="881" y="198.11" class="label-name">nauczycielski</tspan></text>
+
+</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="pietro-1" data-node="n415" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="118" y="124" width="26" height="45"/><circle cx="130.0" cy="147.0"/><text x="130.0" y="150.5">A</text></g><g class="stair-target" data-stair="B" data-stair-level="pietro-1" data-node="n416" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="634" y="118" width="41" height="29"/><circle cx="654.0" cy="133.0"/><text x="654.0" y="136.5">B</text></g></g></svg>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../../style.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="641 291 49 53"><g id="rooms"><path id="parter-18" class="room amenity" data-room-id="18" data-level="parter" data-name="18 – Pomoc przedmedyczna" fill-rule="evenodd" clip-rule="evenodd" d="M645,295 L686,295 L686,340 L645,340 Z"><title>18 – Pomoc przedmedyczna</title></path></g><g id="labels"><text class="room-label label-size-7" transform="rotate(90 665.5 317.5)"><tspan x="665.5" y="307.67" class="label-number">18</tspan><tspan x="665.5" y="315.72" class="label-name">Pomoc</tspan><tspan x="665.5" y="323.77" class="label-name">przed-</tspan><tspan x="665.5" y="331.81" class="label-name">medyczna</tspan></text></g></svg>

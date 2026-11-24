@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../../style.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="587 292 60 90"><g id="rooms"><path id="pracownie-robotyka" class="room" data-room-id="robotyka" data-level="pracownie" data-name="Robotyka" fill-rule="evenodd" clip-rule="evenodd" d="M591,296 L643,296 L643,378 L591,378 Z"><title>Robotyka</title></path></g><g id="labels"><text class="room-label" transform="rotate(90 617 337)"><tspan x="617" y="341.16" class="label-name">Robotyka</tspan></text></g></svg>

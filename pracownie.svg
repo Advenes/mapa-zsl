@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="38 60 997 343" data-plan-level-svg="pracownie" aria-label="Pracownie zawodowe">
+<title>Pracownie zawodowe</title><g id="floors" data-location="website">
+<path class="floor-outline" d="M58,180 L196,180 L200,138 L240,138 L240,80 L590,80 L590,138 L615,138 L615,80 L849,80 L849,350 L766,350 L766,383 L240,383 L240,284 L210,284 L196,260 L58,260 Z"/>
+<path class="floor-outline" d="M910,199 L1015,199 L1015,383 L910,383 Z"/>
+</g><g id="rooms">
+<path id="pracownie-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M243,83 L298,83 L298,137 L243,137 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-02" class="room" data-room-id="02" data-level="pracownie" data-name="02 – Elektroniczna" fill-rule="evenodd" clip-rule="evenodd" d="M303,83 L402,83 L402,137 L303,137 Z" tabindex="0" role="button" aria-label="02 – Elektroniczna"><title>02 – Elektroniczna</title></path>
+<path id="pracownie-bez-numeru-2" class="room" data-room-id="bez-numeru-2" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M405,83 L427,83 L427,124 L405,124 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-3" class="room" data-room-id="bez-numeru-3" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M431,83 L452,83 L452,137 L431,137 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-wc-1" class="room wc" data-room-id="wc-1" data-level="pracownie" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M456,83 L500,83 L500,119 L473,119 L473,137 L456,137 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
+<path id="pracownie-wc-2" class="room wc" data-room-id="wc-2" data-level="pracownie" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M503,83 L528,83 L528,137 L478,137 L478,123 L503,123 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
+<path id="pracownie-bez-numeru-4" class="room" data-room-id="bez-numeru-4" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M532,83 L585,83 L585,137 L532,137 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-5" class="room" data-room-id="bez-numeru-5" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M619,83 L643,83 L643,119 L619,119 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-6" class="room" data-room-id="bez-numeru-6" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M648,83 L701,83 L701,137 L648,137 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-7" class="room" data-room-id="bez-numeru-7" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M705,83 L731,83 L731,137 L705,137 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-8" class="room" data-room-id="bez-numeru-8" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M734,83 L761,83 L761,116 L734,116 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-9" class="room" data-room-id="bez-numeru-9" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M734,119 L761,119 L761,137 L734,137 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-10" class="room" data-room-id="bez-numeru-10" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M766,83 L782,83 L782,137 L766,137 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-09" class="room" data-room-id="09" data-level="pracownie" data-name="09 – MP" fill-rule="evenodd" clip-rule="evenodd" d="M788,83 L844,83 L844,144 L788,144 Z" tabindex="0" role="button" aria-label="09 – MP"><title>09 – MP</title></path>
+<path id="pracownie-09a" class="room" data-room-id="09a" data-level="pracownie" data-name="09a – montaż UTK" fill-rule="evenodd" clip-rule="evenodd" d="M788,148 L844,148 L844,199 L788,199 Z" tabindex="0" role="button" aria-label="09a – montaż UTK"><title>09a – montaż UTK</title></path>
+<path id="pracownie-bez-numeru-11" class="room" data-room-id="bez-numeru-11" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M62,184 L121,184 L121,229 L62,229 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-12" class="room" data-room-id="bez-numeru-12" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M125,184 L190,184 L190,229 L125,229 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-029" class="room" data-room-id="029" data-level="pracownie" data-name="029 – Automatyka" fill-rule="evenodd" clip-rule="evenodd" d="M243,159 L297,159 L297,266 L243,266 Z" tabindex="0" role="button" aria-label="029 – Automatyka"><title>029 – Automatyka</title></path>
+<path id="pracownie-028" class="room" data-room-id="028" data-level="pracownie" data-name="028 – Sieci komputerowe" fill-rule="evenodd" clip-rule="evenodd" d="M301,159 L355,159 L355,266 L301,266 Z" tabindex="0" role="button" aria-label="028 – Sieci komputerowe"><title>028 – Sieci komputerowe</title></path>
+<path id="pracownie-026" class="room" data-room-id="026" data-level="pracownie" data-name="026 – Foto" fill-rule="evenodd" clip-rule="evenodd" d="M359,159 L470,159 L470,229 L359,229 Z" tabindex="0" role="button" aria-label="026 – Foto"><title>026 – Foto</title></path>
+<path id="pracownie-bez-numeru-13" class="room" data-room-id="bez-numeru-13" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M359,233 L452,233 L452,266 L359,266 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-021" class="room" data-room-id="021" data-level="pracownie" data-name="021 – robotyka" fill-rule="evenodd" clip-rule="evenodd" d="M503,159 L586,159 L586,266 L503,266 Z" tabindex="0" role="button" aria-label="021 – robotyka"><title>021 – robotyka</title></path>
+<path id="pracownie-bez-numeru-14" class="room" data-room-id="bez-numeru-14" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M619,159 L643,159 L643,266 L619,266 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-silownia" class="room sport" data-room-id="silownia" data-level="pracownie" data-name="Siłownia" fill-rule="evenodd" clip-rule="evenodd" d="M648,159 L761,159 L761,185 L648,185 Z" tabindex="0" role="button" aria-label="Siłownia"><title>Siłownia</title></path>
+<path id="pracownie-teleinformatyczna" class="room" data-room-id="teleinformatyczna" data-level="pracownie" data-name="Teleinformatyczna" fill-rule="evenodd" clip-rule="evenodd" d="M648,190 L761,190 L761,266 L648,266 Z" tabindex="0" role="button" aria-label="Teleinformatyczna"><title>Teleinformatyczna</title></path>
+<path id="pracownie-bez-numeru-15" class="room" data-room-id="bez-numeru-15" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M788,211 L815,211 L815,220 L788,220 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-16" class="room" data-room-id="bez-numeru-16" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M819,203 L844,203 L844,237 L819,237 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-17" class="room" data-room-id="bez-numeru-17" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M788,223 L815,223 L815,238 L788,238 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-bez-numeru-18" class="room" data-room-id="bez-numeru-18" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M788,241 L844,241 L844,274 L821,274 L821,293 L788,293 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-012" class="room" data-room-id="012" data-level="pracownie" data-name="012 – łączeniowa" fill-rule="evenodd" clip-rule="evenodd" d="M788,296 L826,296 L826,278 L844,278 L844,344 L788,344 Z" tabindex="0" role="button" aria-label="012 – łączeniowa"><title>012 – łączeniowa</title></path>
+<path id="pracownie-pracownia-zawodowa" class="room" data-room-id="pracownia-zawodowa" data-level="pracownie" data-name="Pracownia – zawodowa" fill-rule="evenodd" clip-rule="evenodd" d="M243,270 L355,270 L355,378 L243,378 Z" tabindex="0" role="button" aria-label="Pracownia – zawodowa"><title>Pracownia – zawodowa</title></path>
+<path id="pracownie-024" class="room" data-room-id="024" data-level="pracownie" data-name="024 – Spotkania absolwentów" fill-rule="evenodd" clip-rule="evenodd" d="M359,270 L413,270 L413,378 L359,378 Z" tabindex="0" role="button" aria-label="024 – Spotkania absolwentów"><title>024 – Spotkania absolwentów</title></path>
+<path id="pracownie-bez-numeru-19" class="room" data-room-id="bez-numeru-19" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M417,270 L470,270 L470,282 L417,282 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-biblioteka" class="room" data-room-id="biblioteka" data-level="pracownie" data-name="Biblioteka" fill-rule="evenodd" clip-rule="evenodd" d="M417,286 L470,286 L470,378 L417,378 Z" tabindex="0" role="button" aria-label="Biblioteka"><title>Biblioteka</title></path>
+<path id="pracownie-sala-konferencyjna" class="room" data-room-id="sala-konferencyjna" data-level="pracownie" data-name="Sala – konferencyjna" fill-rule="evenodd" clip-rule="evenodd" d="M475,270 L527,270 L527,378 L475,378 Z" tabindex="0" role="button" aria-label="Sala – konferencyjna"><title>Sala – konferencyjna</title></path>
+<path id="pracownie-informatyczna-1" class="room" data-room-id="informatyczna-1" data-level="pracownie" data-name="Informatyczna" fill-rule="evenodd" clip-rule="evenodd" d="M532,270 L585,270 L585,378 L532,378 Z" tabindex="0" role="button" aria-label="Informatyczna"><title>Informatyczna</title></path>
+<path id="pracownie-robotyka" class="room" data-room-id="robotyka" data-level="pracownie" data-name="Robotyka" fill-rule="evenodd" clip-rule="evenodd" d="M591,296 L643,296 L643,378 L591,378 Z" tabindex="0" role="button" aria-label="Robotyka"><title>Robotyka</title></path>
+<path id="pracownie-informatyczna-2" class="room" data-room-id="informatyczna-2" data-level="pracownie" data-name="Informatyczna" fill-rule="evenodd" clip-rule="evenodd" d="M648,270 L701,270 L701,378 L648,378 Z" tabindex="0" role="button" aria-label="Informatyczna"><title>Informatyczna</title></path>
+<path id="pracownie-informatyczna-3" class="room" data-room-id="informatyczna-3" data-level="pracownie" data-name="Informatyczna" fill-rule="evenodd" clip-rule="evenodd" d="M706,270 L761,270 L761,378 L706,378 Z" tabindex="0" role="button" aria-label="Informatyczna"><title>Informatyczna</title></path>
+<path id="pracownie-bez-numeru-20" class="room" data-room-id="bez-numeru-20" data-level="pracownie" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M915,204 L1010,204 L1010,251 L915,251 Z" tabindex="0" role="button" aria-label="Pomieszczenie bez opisu"><title>Pomieszczenie bez opisu</title></path>
+<path id="pracownie-051" class="room" data-room-id="051" data-level="pracownie" data-name="051 – bezpieczeństwa sieci" fill-rule="evenodd" clip-rule="evenodd" d="M915,256 L1010,256 L1010,378 L915,378 Z" tabindex="0" role="button" aria-label="051 – bezpieczeństwa sieci"><title>051 – bezpieczeństwa sieci</title></path>
+</g><g id="details" pointer-events="none">
+<path d="M887,257 L910,257 L910,283 L887,283 Z" class="detail-solid"/>
+<path d="M887,261 H910" class="detail-line"/>
+<path d="M887,265 H910" class="detail-line"/>
+<path d="M887,269 H910" class="detail-line"/>
+<path d="M887,273 H910" class="detail-line"/>
+<path d="M887,277 H910" class="detail-line"/>
+<path d="M887,281 H910" class="detail-line"/>
+</g><g id="labels" aria-hidden="true">
+
+<text class="room-label"><tspan x="352.5" y="106.69" class="label-number">02</tspan><tspan x="352.5" y="121.64" class="label-name">Elektroniczna</tspan></text>
+
+
+<text class="room-label" transform="rotate(90 478 110)"><tspan x="478" y="114.16" class="label-name">WC</tspan></text>
+<text class="room-label" transform="rotate(90 503 110)"><tspan x="503" y="114.16" class="label-name">WC</tspan></text>
+
+
+
+
+
+
+
+<text class="room-label"><tspan x="816" y="110.19" class="label-number">09</tspan><tspan x="816" y="125.14" class="label-name">MP</tspan></text>
+<text class="room-label"><tspan x="816" y="162.71" class="label-number">09a</tspan><tspan x="816" y="177.66" class="label-name">montaż</tspan><tspan x="816" y="192.61" class="label-name">UTK</tspan></text>
+
+
+<text class="room-label" transform="rotate(90 270 212.5)"><tspan x="270" y="209.19" class="label-number">029</tspan><tspan x="270" y="224.13" class="label-name">Automatyka</tspan></text>
+<text class="room-label" transform="rotate(90 328 212.5)"><tspan x="328" y="201.71" class="label-number">028</tspan><tspan x="328" y="216.66" class="label-name">Sieci</tspan><tspan x="328" y="231.61" class="label-name">komputerowe</tspan></text>
+<text class="room-label" transform="rotate(90 414.5 194)"><tspan x="414.5" y="190.69" class="label-number">026</tspan><tspan x="414.5" y="205.63" class="label-name">Foto</tspan></text>
+
+<text class="room-label" transform="rotate(90 544.5 212.5)"><tspan x="544.5" y="209.19" class="label-number">021</tspan><tspan x="544.5" y="224.13" class="label-name">robotyka</tspan></text>
+
+<text class="room-label"><tspan x="704.5" y="176.16" class="label-name">Siłownia</tspan></text>
+<text class="room-label label-size-11"><tspan x="704.5" y="231.52" class="label-name">Teleinformatyczna</tspan></text>
+
+
+
+
+<text class="room-label label-size-9"><tspan x="816" y="308.70" class="label-number">012</tspan><tspan x="816" y="319.06" class="label-name">łączeniowa</tspan></text>
+<text class="room-label" transform="rotate(90 299 324)"><tspan x="299" y="320.69" class="label-name">Pracownia</tspan><tspan x="299" y="335.63" class="label-name">zawodowa</tspan></text>
+<text class="room-label" transform="rotate(90 386 324)"><tspan x="386" y="313.21" class="label-number">024</tspan><tspan x="386" y="328.16" class="label-name">Spotkania</tspan><tspan x="386" y="343.11" class="label-name">absolwentów</tspan></text>
+
+<text class="room-label" transform="rotate(90 443.5 332)"><tspan x="443.5" y="336.16" class="label-name">Biblioteka</tspan></text>
+<text class="room-label" transform="rotate(90 501 324)"><tspan x="501" y="320.69" class="label-name">Sala</tspan><tspan x="501" y="335.63" class="label-name">konferencyjna</tspan></text>
+<text class="room-label" transform="rotate(90 558.5 324)"><tspan x="558.5" y="328.16" class="label-name">Informatyczna</tspan></text>
+<text class="room-label" transform="rotate(90 617 337)"><tspan x="617" y="341.16" class="label-name">Robotyka</tspan></text>
+<text class="room-label" transform="rotate(90 674.5 324)"><tspan x="674.5" y="328.16" class="label-name">Informatyczna</tspan></text>
+<text class="room-label" transform="rotate(90 733.5 324)"><tspan x="733.5" y="328.16" class="label-name">Informatyczna</tspan></text>
+
+<text class="room-label" transform="rotate(90 962.5 317)"><tspan x="962.5" y="306.21" class="label-number">051</tspan><tspan x="962.5" y="321.16" class="label-name">bezpieczeństwa</tspan><tspan x="962.5" y="336.11" class="label-name">sieci</tspan></text>
+</g></svg>
