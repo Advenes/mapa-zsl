@@ -88,8 +88,14 @@ nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
 button { border: 1px solid var(--border); border-radius: 5px; padding: 10px 14px; background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
 nav button[aria-selected=true], .primary { background: var(--accent); color: var(--surface); border-color: var(--accent); }
 .map, .room-selection, .routing { background: var(--surface); border: 1px solid var(--subtle); border-radius: var(--panel-radius); }
-.map { padding: 12px; min-height: 280px; display: grid; align-items: center; overflow: hidden; }
-.map svg { width: 100%; height: auto; max-height: var(--map-max-height); }
+.map { padding: 12px; min-height: 280px; display: grid; grid-template-rows: auto 1fr; gap: 8px; overflow: hidden; }
+.map-zoom { display: flex; justify-content: flex-end; gap: 6px; }
+.map-zoom button { padding: 4px 10px; min-width: 36px; min-height: 36px; font-size: var(--text-body); }
+.map-zoom button:disabled { cursor: default; }
+.map-viewport { display: grid; align-items: center; min-width: 0; }
+.map-viewport svg { display: block; width: 100%; height: auto; max-height: var(--map-max-height); touch-action: none; user-select: none; }
+.map-viewport.is-zoomed svg { cursor: grab; }
+.map-viewport.is-dragging svg, .map-viewport.is-dragging svg * { cursor: grabbing; }
 .room-selection { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; padding: 5px 10px; margin-bottom: 12px; }
 .room-selection h2 { flex: 1 1 10rem; min-width: 0; margin: 0; font-size: var(--text-body); overflow-wrap: anywhere; }
 small, .legends { font-size: var(--text-small); }
