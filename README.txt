@@ -15,6 +15,15 @@ graf.json – graf połączeń do dalszej edycji; aplikacja korzysta z jego kopi
 pomieszczenia.json – dane pomieszczeń
 pomieszczenia/ – pojedyncze SVG
 
+LINKI DO MAPY I KODY QR
+
+Do adresu mapa.html można dodać parametry:
+- mapa.html?start=wejscie ustawia wejście główne jako start i zostawia pole celu puste.
+- mapa.html?start=wejscie&cel=pietro-2-201 od razu wyznacza trasę do sali 201.
+- mapa.html?cel=201 korzysta z domyślnego wejścia głównego.
+
+Parametry przyjmują identyfikator z graf.json albo jednoznaczny numer lub nazwę. Przy powtarzających się numerach i nazwach użyj identyfikatora, np. parter-wc. Do kodu QR wpisz pełny adres opublikowanej mapy z parametrami.
+
 Graf i geometria V4 nie zostały zmienione.
 
 MAPA SZKOŁY — GRAF PRZEJŚĆ V2

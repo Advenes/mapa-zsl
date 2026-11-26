@@ -4,7 +4,7 @@
 <title>I piętro</title><g id="floors" data-location="website">
 <path class="floor-outline" d="M43,23 L731,23 L731,50 L1000,50 L1000,150 L984,150 L984,213 L619,213 L619,117 L150,117 L150,176 L112,176 L112,91 L43,91 Z"/>
 </g><g id="rooms">
-<path id="pietro-1-101" class="room" data-room-id="101" data-level="pietro-1" data-name="101" fill-rule="evenodd" clip-rule="evenodd" d="M48,28 L145,28 L145,66 L136,66 L136,86 L48,86 Z" tabindex="0" role="button" aria-label="101"><title>101</title></path>
+<path id="pietro-1-101" class="room" data-room-id="101" data-level="pietro-1" data-name="101" fill-rule="evenodd" clip-rule="evenodd" d="M48,28 L145,28 L145,86 L48,86 Z" tabindex="0" role="button" aria-label="101"><title>101</title></path>
 <path id="pietro-1-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pietro-1" data-name="102a" fill-rule="evenodd" clip-rule="evenodd" d="M151,28 L219,28 L219,86 L151,86 Z" tabindex="0" role="button" aria-label="102a"><title>102a</title></path>
 <path id="pietro-1-bez-numeru-2" class="room" data-room-id="bez-numeru-2" data-level="pietro-1" data-name="102b" fill-rule="evenodd" clip-rule="evenodd" d="M224,28 L297,28 L297,86 L224,86 Z" tabindex="0" role="button" aria-label="102b"><title>102b</title></path>
 <path id="pietro-1-103" class="room" data-room-id="103" data-level="pietro-1" data-name="103" fill-rule="evenodd" clip-rule="evenodd" d="M302,28 L397,28 L397,86 L302,86 Z" tabindex="0" role="button" aria-label="103"><title>103</title></path>
@@ -15,15 +15,14 @@
 <path id="pietro-1-107" class="room" data-room-id="107" data-level="pietro-1" data-name="107" fill-rule="evenodd" clip-rule="evenodd" d="M731,55 L827,55 L827,111 L731,111 Z" tabindex="0" role="button" aria-label="107"><title>107</title></path>
 <path id="pietro-1-108" class="room" data-room-id="108" data-level="pietro-1" data-name="108" fill-rule="evenodd" clip-rule="evenodd" d="M832,55 L927,55 L927,111 L832,111 Z" tabindex="0" role="button" aria-label="108"><title>108</title></path>
 <path id="pietro-1-109" class="room" data-room-id="109" data-level="pietro-1" data-name="109" fill-rule="evenodd" clip-rule="evenodd" d="M934,55 L995,55 L995,144 L934,144 Z" tabindex="0" role="button" aria-label="109"><title>109</title></path>
-<path id="pietro-1-wc" class="room wc" data-room-id="wc" data-level="pietro-1" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M624,153 L675,153 L675,175 L655,175 L655,208 L624,208 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
-<path id="pietro-1-bez-numeru-4" class="room" data-room-id="bez-numeru-4" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M659,180 L675,180 L675,193 L659,193 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="pietro-1-bez-numeru-5" class="room" data-room-id="bez-numeru-5" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M659,197 L675,197 L675,208 L659,208 Z"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-1-wc" class="room wc" data-room-id="wc" data-level="pietro-1" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M624,153 L675,153 L675,208 L624,208 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
 <path id="pietro-1-bez-numeru-6" class="room" data-room-id="bez-numeru-6" data-level="pietro-1" data-name="111" fill-rule="evenodd" clip-rule="evenodd" d="M731,150 L803,150 L803,208 L731,208 Z" tabindex="0" role="button" aria-label="111"><title>111</title></path>
-<path id="pietro-1-bez-numeru-7" class="room" data-room-id="bez-numeru-7" data-level="pietro-1" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M808,150 L828,150 L828,208 L808,208 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="pietro-1-110" class="room" data-room-id="110" data-level="pietro-1" data-name="pok. nauczy." fill-rule="evenodd" clip-rule="evenodd" d="M833,150 L917,150 L917,167 L929,167 L929,208 L833,208 Z" tabindex="0" role="button" aria-label="pok. nauczy."><title>pok. nauczy.</title></path>
+<path id="pietro-1-110" class="room" data-room-id="110" data-level="pietro-1" data-name="pok. nauczy." fill-rule="evenodd" clip-rule="evenodd" d="M808,150 L929,150 L929,208 L808,208 Z" tabindex="0" role="button" aria-label="pok. nauczy."><title>pok. nauczy.</title></path>
 <path id="pietro-1-bez-numeru-8" class="room" data-room-id="bez-numeru-8" data-level="pietro-1" data-name="110a" fill-rule="evenodd" clip-rule="evenodd" d="M935,150 L978,150 L978,208 L935,208 Z" tabindex="0" role="button" aria-label="110a"><title>110a</title></path>
 </g><g id="details" pointer-events="none">
-<path d="M118,124 L144,124 L144,169 L118,169 Z" class="detail-solid"/>
+<path d="M118,117 L144,117 L144,169 L118,169 Z" class="detail-solid"/>
+<path d="M118,120 H144" class="detail-line"/>
+<path d="M118,124 H144" class="detail-line"/>
 <path d="M118,128 H144" class="detail-line"/>
 <path d="M118,132 H144" class="detail-line"/>
 <path d="M118,136 H144" class="detail-line"/>
@@ -35,7 +34,9 @@
 <path d="M118,160 H144" class="detail-line"/>
 <path d="M118,164 H144" class="detail-line"/>
 <path d="M118,168 H144" class="detail-line"/>
-<path d="M634,118 L675,118 L675,147 L634,147 Z" class="detail-solid"/>
+<path d="M625,118 L675,118 L675,147 L625,147 Z" class="detail-solid"/>
+<path d="M629,118 V147" class="detail-line"/>
+<path d="M633,118 V147" class="detail-line"/>
 <path d="M638,118 V147" class="detail-line"/>
 <path d="M642,118 V147" class="detail-line"/>
 <path d="M646,118 V147" class="detail-line"/>
@@ -68,6 +69,6 @@
 
 
 
-<text class="room-label"><tspan x="881" y="183.16" class="label-name">pok. nauczy.</tspan></text>
+<text class="room-label"><tspan x="868.5" y="183.16" class="label-name">pok. nauczy.</tspan></text>
 
-</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="pietro-1" data-node="n415" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="118" y="124" width="26" height="45"/><circle cx="130.0" cy="147.0"/><text x="130.0" y="150.5">A</text></g><g class="stair-target" data-stair="B" data-stair-level="pietro-1" data-node="n416" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="634" y="118" width="41" height="29"/><circle cx="654.0" cy="133.0"/><text x="654.0" y="136.5">B</text></g></g></svg>
+</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="pietro-1" data-node="n415" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="118" y="117" width="26" height="52"/><circle cx="131" cy="143"/><path class="transition-icon" transform="translate(131 143)" d="M-5.5,4.5 H-2.5 V1.5 H0.5 V-1.5 H3.5 V-4.5 H5.5" aria-hidden="true"/></g><g class="stair-target" data-stair="B" data-stair-level="pietro-1" data-node="n416" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="625" y="118" width="50" height="29"/><circle cx="650" cy="132.5"/><path class="transition-icon" transform="translate(650 132.5)" d="M-5.5,4.5 H-2.5 V1.5 H0.5 V-1.5 H3.5 V-4.5 H5.5" aria-hidden="true"/></g></g></svg>

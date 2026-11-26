@@ -2,14 +2,14 @@
 <?xml-stylesheet type="text/css" href="style.css"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="25 13 1001 657" data-plan-level-svg="parter" aria-label="Parter">
 <title>Parter</title><g id="floors" data-location="website">
-<path class="floor-outline" d="M45,33 L638,33 L638,40 L710,40 L710,59 L840,59 L840,306 L830,306 L830,432 L1006,432 L1006,530 L989,530 L989,594 L736,594 L736,615 L682,615 L682,594 L624,594 L624,498 L150,498 L150,556 L115,556 L115,471 L45,471 Z"/>
+<path class="floor-fill" d="M45,33 L237,33 L237,405 L638,405 L638,40 L710,40 L710,59 L840,59 L840,306 L830,306 L830,432 L1006,432 L1006,530 L989,530 L989,594 L736,594 L736,615 L682,615 L682,594 L624,594 L624,498 L150,498 L150,556 L115,556 L115,471 L45,471 Z"/>
+<path class="floor-outline" fill="none" d="M237,264 L237,405 L638,405 L638,379 M638,361 L638,40 L710,40 L710,59 L840,59 L840,306 L830,306 L830,432 L1006,432 L1006,530 L989,530 L989,594 L736,594 L736,615 L682,615 L682,594 L624,594 L624,498 L150,498 L150,556 L115,556 L115,471 L45,471 L45,33 L237,33 L237,246"/>
 </g><g id="rooms">
-<path id="parter-boisko" class="room outdoor" data-room-id="boisko" data-level="parter" data-name="BOISKO" fill-rule="evenodd" clip-rule="evenodd" d="M237,34 L637,34 L637,405 L237,405 Z" tabindex="0" role="button" aria-label="BOISKO"><title>BOISKO</title></path>
 <path id="parter-pracownia-zawodowa" class="room" data-room-id="pracownia-zawodowa" data-level="parter" data-name="Pracownia zawodowa" fill-rule="evenodd" clip-rule="evenodd" d="M46,34 L237,34 L237,405 L46,405 Z" tabindex="0" role="button" aria-label="Pracownia zawodowa"><title>Pracownia zawodowa</title></path>
 <path id="parter-bez-numeru-3" class="room" data-room-id="bez-numeru-3" data-level="parter" data-name="magazyn sprzętu sportowego" fill-rule="evenodd" clip-rule="evenodd" d="M645,64 L686,64 L686,98 L645,98 Z" tabindex="0" role="button" aria-label="magazyn sprzętu sportowego"><title>magazyn sprzętu sportowego</title></path>
 <path id="parter-bez-numeru-5" class="room" data-room-id="bez-numeru-5" data-level="parter" data-name="pok. instruktora" fill-rule="evenodd" clip-rule="evenodd" d="M645,101 L686,101 L686,147 L645,147 Z" tabindex="0" role="button" aria-label="pok. instruktora"><title>pok. instruktora</title></path>
 <path id="parter-bez-numeru-6" class="room" data-room-id="bez-numeru-6" data-level="parter" data-name="Szatnia" fill-rule="evenodd" clip-rule="evenodd" d="M645,151 L686,151 L686,192 L645,192 Z" tabindex="0" role="button" aria-label="Szatnia"><title>Szatnia</title></path>
-<path id="parter-bez-numeru-7" class="room" data-room-id="bez-numeru-7" data-level="parter" data-name="Natryski / WC" fill-rule="evenodd" clip-rule="evenodd" d="M645,196 L686,196 L686,244 L645,244 Z" tabindex="0" role="button" aria-label="Natryski / WC"><title>Natryski / WC</title></path>
+<path id="parter-bez-numeru-7" class="room" data-room-id="bez-numeru-7" data-level="parter" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M645,196 L686,196 L686,244 L645,244 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
 <path id="parter-bez-numeru-8" class="room" data-room-id="bez-numeru-8" data-level="parter" data-name="Szatnia" fill-rule="evenodd" clip-rule="evenodd" d="M645,248 L686,248 L686,291 L645,291 Z" tabindex="0" role="button" aria-label="Szatnia"><title>Szatnia</title></path>
 <path id="parter-18" class="room amenity" data-room-id="18" data-level="parter" data-name="18 – Gabinet lekarski" fill-rule="evenodd" clip-rule="evenodd" d="M645,295 L686,295 L686,340 L645,340 Z" tabindex="0" role="button" aria-label="18 – Gabinet lekarski"><title>18 – Gabinet lekarski</title></path>
 <path id="parter-bez-numeru-9" class="room" data-room-id="bez-numeru-9" data-level="parter" data-name="Sala Gimnastyczna" fill-rule="evenodd" clip-rule="evenodd" d="M712,63 L835,63 L835,301 L712,301 Z" tabindex="0" role="button" aria-label="Sala Gimnastyczna"><title>Sala Gimnastyczna</title></path>
@@ -21,9 +21,7 @@
 <path id="parter-24" class="room" data-room-id="24" data-level="parter" data-name="24" fill-rule="evenodd" clip-rule="evenodd" d="M50,410 L149,410 L149,466 L50,466 Z" tabindex="0" role="button" aria-label="24"><title>24</title></path>
 <path id="parter-bez-numeru-15" class="room" data-room-id="bez-numeru-15" data-level="parter" data-name="23" fill-rule="evenodd" clip-rule="evenodd" d="M154,410 L199,410 L199,466 L154,466 Z" tabindex="0" role="button" aria-label="23"><title>23</title></path>
 <path id="parter-22" class="room" data-room-id="22" data-level="parter" data-name="22" fill-rule="evenodd" clip-rule="evenodd" d="M204,410 L300,410 L300,466 L204,466 Z" tabindex="0" role="button" aria-label="22"><title>22</title></path>
-<path id="parter-bez-numeru-16" class="room" data-room-id="bez-numeru-16" data-level="parter" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M305,410 L352,410 L352,466 L305,466 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="parter-bez-numeru-17" class="room" data-room-id="bez-numeru-17" data-level="parter" data-name="Studio RTV" fill-rule="evenodd" clip-rule="evenodd" d="M357,410 L401,410 L401,450 L357,450 Z" tabindex="0" role="button" aria-label="Studio RTV"><title>Studio RTV</title></path>
-<path id="parter-bez-numeru-18" class="room" data-room-id="bez-numeru-18" data-level="parter" data-name="21A" fill-rule="evenodd" clip-rule="evenodd" d="M405,410 L426,410 L426,466 L357,466 L357,454 L405,454 Z" tabindex="0" role="button" aria-label="21A"><title>21A</title></path>
+<path id="parter-bez-numeru-17" class="room" data-room-id="bez-numeru-17" data-level="parter" data-name="21A – Studio RTV" fill-rule="evenodd" clip-rule="evenodd" d="M305,410 L426,410 L426,466 L305,466 Z" tabindex="0" role="button" aria-label="21A – Studio RTV"><title>21A – Studio RTV</title></path>
 <path id="parter-21" class="room" data-room-id="21" data-level="parter" data-name="21" fill-rule="evenodd" clip-rule="evenodd" d="M431,410 L478,410 L478,466 L431,466 Z" tabindex="0" role="button" aria-label="21"><title>21</title></path>
 <path id="parter-20" class="room" data-room-id="20" data-level="parter" data-name="20" fill-rule="evenodd" clip-rule="evenodd" d="M482,410 L580,410 L580,466 L482,466 Z" tabindex="0" role="button" aria-label="20"><title>20</title></path>
 <path id="parter-19" class="room" data-room-id="19" data-level="parter" data-name="19" fill-rule="evenodd" clip-rule="evenodd" d="M584,410 L680,410 L680,466 L584,466 Z" tabindex="0" role="button" aria-label="19"><title>19</title></path>
@@ -39,7 +37,6 @@
 <path id="parter-bez-numeru-27" class="room" data-room-id="bez-numeru-27" data-level="parter" data-name="7" fill-rule="evenodd" clip-rule="evenodd" d="M943,537 L985,537 L985,589 L943,589 Z" tabindex="0" role="button" aria-label="7"><title>7</title></path>
 <path id="parter-wc" class="room wc" data-room-id="wc" data-level="parter" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M628,534 L680,534 L680,590 L628,590 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
 </g><g id="details" pointer-events="none">
-<path class="door-opening" d="M637,361 V379"/>
 <path d="M120,506 L146,506 L146,552 L120,552 Z" class="detail-solid"/>
 <path d="M120,510 H146" class="detail-line"/>
 <path d="M120,514 H146" class="detail-line"/>
@@ -77,7 +74,7 @@
 <text class="room-label label-size-7"><tspan x="665.5" y="75.19" class="label-name">magazyn</tspan><tspan x="665.5" y="83.24" class="label-name">sprzętu</tspan><tspan x="665.5" y="91.29" class="label-name">sportowego</tspan></text>
 <text class="room-label label-size-7"><tspan x="665.5" y="122.21" class="label-name">pok.</tspan><tspan x="665.5" y="130.26" class="label-name">instruktora</tspan></text>
 <text class="room-label label-size-9" transform="rotate(90 665.5 171.5)"><tspan x="665.5" y="174.38" class="label-name">Szatnia</tspan></text>
-<text class="room-label label-size-9"><tspan x="665.5" y="217.71" class="label-name">Natryski</tspan><tspan x="665.5" y="228.06" class="label-name">/ WC</tspan></text>
+<text class="room-label"><tspan x="665.5" y="224.16" class="label-name">WC</tspan></text>
 <text class="room-label label-size-9" transform="rotate(90 665.5 269.5)"><tspan x="665.5" y="272.38" class="label-name">Szatnia</tspan></text>
 <text class="room-label label-size-17"><tspan x="773.5" y="177.66" class="label-name">Sala</tspan><tspan x="773.5" y="197.22" class="label-name">Gimnastyczna</tspan></text>
 <text class="room-label"><tspan x="748.5" y="336.66" class="label-number">16</tspan></text>
@@ -86,8 +83,7 @@
 <text class="room-label"><tspan x="803" y="421.16" class="label-number">13</tspan></text>
 <text class="room-label"><tspan x="756" y="421.66" class="label-number">12</tspan></text>
 <text class="room-label"><tspan x="176.5" y="442.16" class="label-number">23</tspan></text>
-<text class="room-label label-size-9"><tspan x="379" y="427.70" class="label-name">Studio</tspan><tspan x="379" y="438.06" class="label-name">RTV</tspan></text>
-<text class="room-label label-size-9"><tspan x="415.5" y="434.88" class="label-number">21A</tspan></text>
+<text class="room-label"><tspan x="365.5" y="434.69" class="label-number">21A</tspan><tspan x="365.5" y="449.64" class="label-name">Studio RTV</tspan></text>
 <text class="room-label"><tspan x="969.5" y="475.66" class="label-number">9</tspan></text>
 <text class="room-label label-size-11"><tspan x="969.5" y="522.02" class="label-number">8</tspan></text>
 <text class="room-label label-size-9"><tspan x="755" y="561.71" class="label-number">1</tspan><tspan x="755" y="572.06" class="label-name">Portiernia</tspan></text>
@@ -97,7 +93,6 @@
 <text class="room-label"><tspan x="898.5" y="568.16" class="label-number">5</tspan></text>
 <text class="room-label"><tspan x="927" y="568.16" class="label-number">6</tspan></text>
 <text class="room-label"><tspan x="964" y="567.16" class="label-number">7</tspan></text>
-<text class="room-label label-size-17"><tspan x="427" y="105.44" class="label-name">BOISKO</tspan></text>
 
 
 
@@ -134,6 +129,6 @@
 
 
 <text class="room-label"><tspan x="654" y="566.16" class="label-name">WC</tspan></text>
-</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="parter" data-node="n413" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="120" y="506" width="26" height="46"/><circle cx="133.0" cy="530.0"/><text x="133.0" y="533.5">A</text></g><g class="stair-target" data-stair="B" data-stair-level="parter" data-node="n414" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="628" y="499" width="51" height="31"/><circle cx="653.0" cy="515.0"/><text x="653.0" y="518.5">B</text></g></g>
-<g class="passage-layer" aria-label="Drzwi między parterem a pracowniami"><g class="stair-target" data-transfer-id="D" data-transfer-level="pracownie" data-node="n494" tabindex="0" role="button" aria-label="D · Drzwi do planu: Pracownie zawodowe"><title>D · Drzwi do planu: Pracownie zawodowe</title><rect x="213" y="243" width="24" height="24"/><circle cx="225" cy="255"/><text x="225" y="258.5">D</text></g></g>
-<g class="passage-layer" aria-label="Dojście do sali 25"><g class="stair-target" data-transfer-id="E" data-transfer-level="niski-parter" data-node="n496" tabindex="0" role="button" aria-label="E · Przejście do planu: Niski parter"><title>E · Przejście do planu: Niski parter</title><rect x="998" y="568" width="24" height="24"/><circle cx="1010" cy="580"/><text x="1010" y="583.5">E</text></g></g></svg>
+</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="parter" data-node="n413" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="120" y="506" width="26" height="46"/><circle cx="133" cy="529"/><path class="transition-icon" transform="translate(133 529)" d="M-5.5,4.5 H-2.5 V1.5 H0.5 V-1.5 H3.5 V-4.5 H5.5" aria-hidden="true"/></g><g class="stair-target" data-stair="B" data-stair-level="parter" data-node="n414" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="628" y="499" width="51" height="31"/><circle cx="653.5" cy="514.5"/><path class="transition-icon" transform="translate(653.5 514.5)" d="M-5.5,4.5 H-2.5 V1.5 H0.5 V-1.5 H3.5 V-4.5 H5.5" aria-hidden="true"/></g></g>
+<g class="passage-layer" aria-label="Drzwi między parterem a pracowniami"><g class="stair-target" data-transfer-id="D" data-transfer-level="pracownie" data-node="n494" tabindex="0" role="button" aria-label="D · Drzwi do planu: Pracownie zawodowe"><title>D · Drzwi do planu: Pracownie zawodowe</title><rect x="213" y="243" width="24" height="24"/><circle cx="225" cy="255"/><path class="transition-icon" transform="translate(225 255)" d="M-5,5 H5 M-3,5 V-5 H3 V5 M0,0 H1" aria-hidden="true"/></g></g>
+<g class="passage-layer" aria-label="Dojście do sali 25"><g class="stair-target" data-transfer-id="E" data-transfer-level="niski-parter" data-node="n496" tabindex="0" role="button" aria-label="E · Przejście do planu: Niski parter"><title>E · Przejście do planu: Niski parter</title><rect x="998" y="568" width="24" height="24"/><circle cx="1010" cy="580"/><path class="transition-icon" transform="translate(1010 580)" d="M-5.5,4.5 H-2.5 V1.5 H0.5 V-1.5 H3.5 V-4.5 H5.5" aria-hidden="true"/></g></g></svg>

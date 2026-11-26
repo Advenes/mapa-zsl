@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 -8 989 229" data-plan-level-svg="pietro-2" aria-label="II piętro">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20.167189133 -7.894736842 988.665621735 228.789473684" data-plan-level-svg="pietro-2" aria-label="II piętro">
 <title>II piętro</title><g id="floors" data-location="website">
-<path class="floor-outline" d="M40,12 L723,12 L723,39 L989,39 L989,138 L972,138 L972,201 L611,201 L611,107 L145,107 L145,163 L108,163 L108,80 L40,80 Z"/>
+<path class="floor-outline" d="M43,23 L731,23 L731,50 L1000,50 L1000,150 L984,150 L984,213 L619,213 L619,117 L150,117 L150,176 L112,176 L112,91 L43,91 Z" transform="matrix(0.991640543365 0 0 0.994736842105 -2.64054336468 -10.8789473684)"/>
 </g><g id="rooms">
-<path id="pietro-2-201" class="room" data-room-id="201" data-level="pietro-2" data-name="201" fill-rule="evenodd" clip-rule="evenodd" d="M45,17 L141,17 L141,74 L45,74 Z" tabindex="0" role="button" aria-label="201"><title>201</title></path>
-<path id="pietro-2-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M147,17 L168,17 L168,74 L147,74 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="pietro-2-202" class="room" data-room-id="202" data-level="pietro-2" data-name="202" fill-rule="evenodd" clip-rule="evenodd" d="M172,17 L267,17 L267,74 L172,74 Z" tabindex="0" role="button" aria-label="202"><title>202</title></path>
-<path id="pietro-2-bez-numeru-2" class="room" data-room-id="bez-numeru-2" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M271,17 L292,17 L292,74 L271,74 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="pietro-2-203" class="room" data-room-id="203" data-level="pietro-2" data-name="203" fill-rule="evenodd" clip-rule="evenodd" d="M296,17 L391,17 L391,74 L296,74 Z" tabindex="0" role="button" aria-label="203"><title>203</title></path>
-<path id="pietro-2-bez-numeru-3" class="room" data-room-id="bez-numeru-3" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M395,17 L416,17 L416,74 L395,74 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="pietro-2-204" class="room" data-room-id="204" data-level="pietro-2" data-name="204" fill-rule="evenodd" clip-rule="evenodd" d="M421,17 L517,17 L517,74 L421,74 Z" tabindex="0" role="button" aria-label="204"><title>204</title></path>
-<path id="pietro-2-205" class="room" data-room-id="205" data-level="pietro-2" data-name="205" fill-rule="evenodd" clip-rule="evenodd" d="M522,17 L617,17 L617,74 L522,74 Z" tabindex="0" role="button" aria-label="205"><title>205</title></path>
-<path id="pietro-2-206" class="room" data-room-id="206" data-level="pietro-2" data-name="206" fill-rule="evenodd" clip-rule="evenodd" d="M621,17 L716,17 L716,74 L621,74 Z" tabindex="0" role="button" aria-label="206"><title>206</title></path>
+<path id="pietro-2-201" class="room" data-room-id="201" data-level="pietro-2" data-name="201" fill-rule="evenodd" clip-rule="evenodd" d="M45,17 L141,17 L141,74.668421053 L45,74.668421053 Z" tabindex="0" role="button" aria-label="201"><title>201</title></path>
+<path id="pietro-2-bez-numeru-1" class="room" data-room-id="bez-numeru-1" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M147,17 L168,17 L168,74.668421053 L147,74.668421053 Z"><title>Pomieszczenie bez opisu</title></path>
+<path id="pietro-2-202" class="room" data-room-id="202" data-level="pietro-2" data-name="202" fill-rule="evenodd" clip-rule="evenodd" d="M172,17 L292,17 L292,74.668421053 L172,74.668421053 Z" tabindex="0" role="button" aria-label="202"><title>202</title></path>
+<path id="pietro-2-203" class="room" data-room-id="203" data-level="pietro-2" data-name="203" fill-rule="evenodd" clip-rule="evenodd" d="M296,17 L403,17 L403,74.668421053 L296,74.668421053 Z" tabindex="0" role="button" aria-label="203"><title>203</title></path>
+<path id="pietro-2-204" class="room" data-room-id="204" data-level="pietro-2" data-name="204" fill-rule="evenodd" clip-rule="evenodd" d="M407,17 L517,17 L517,74.668421053 L407,74.668421053 Z" tabindex="0" role="button" aria-label="204"><title>204</title></path>
+<path id="pietro-2-205" class="room" data-room-id="205" data-level="pietro-2" data-name="205" fill-rule="evenodd" clip-rule="evenodd" d="M522,17 L617,17 L617,74.668421053 L522,74.668421053 Z" tabindex="0" role="button" aria-label="205"><title>205</title></path>
+<path id="pietro-2-206" class="room" data-room-id="206" data-level="pietro-2" data-name="206" fill-rule="evenodd" clip-rule="evenodd" d="M621,17 L716,17 L716,74.668421053 L621,74.668421053 Z" tabindex="0" role="button" aria-label="206"><title>206</title></path>
 <path id="pietro-2-207" class="room" data-room-id="207" data-level="pietro-2" data-name="207" fill-rule="evenodd" clip-rule="evenodd" d="M723,44 L818,44 L818,101 L723,101 Z" tabindex="0" role="button" aria-label="207"><title>207</title></path>
 <path id="pietro-2-208" class="room" data-room-id="208" data-level="pietro-2" data-name="208" fill-rule="evenodd" clip-rule="evenodd" d="M823,44 L917,44 L917,101 L823,101 Z" tabindex="0" role="button" aria-label="208"><title>208</title></path>
 <path id="pietro-2-209" class="room" data-room-id="209" data-level="pietro-2" data-name="209" fill-rule="evenodd" clip-rule="evenodd" d="M923,44 L984,44 L984,132 L923,132 Z" tabindex="0" role="button" aria-label="209"><title>209</title></path>
-<path id="pietro-2-wc" class="room wc" data-room-id="wc" data-level="pietro-2" data-name="WC / umywalnia" fill-rule="evenodd" clip-rule="evenodd" d="M616,140 L667,140 L667,195 L616,195 Z" tabindex="0" role="button" aria-label="WC / umywalnia"><title>WC / umywalnia</title></path>
-<path id="pietro-2-bez-numeru-4" class="room" data-room-id="bez-numeru-4" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M723,139 L744,139 L744,195 L723,195 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="pietro-2-211" class="room" data-room-id="211" data-level="pietro-2" data-name="211" fill-rule="evenodd" clip-rule="evenodd" d="M749,139 L844,139 L844,195 L749,195 Z" tabindex="0" role="button" aria-label="211"><title>211</title></path>
-<path id="pietro-2-bez-numeru-5" class="room" data-room-id="bez-numeru-5" data-level="pietro-2" data-name="Pomieszczenie bez opisu" fill-rule="evenodd" clip-rule="evenodd" d="M848,139 L868,139 L868,195 L848,195 Z"><title>Pomieszczenie bez opisu</title></path>
-<path id="pietro-2-210" class="room" data-room-id="210" data-level="pietro-2" data-name="210" fill-rule="evenodd" clip-rule="evenodd" d="M873,139 L967,139 L967,195 L873,195 Z" tabindex="0" role="button" aria-label="210"><title>210</title></path>
+<path id="pietro-2-wc" class="room wc" data-room-id="wc" data-level="pietro-2" data-name="WC" fill-rule="evenodd" clip-rule="evenodd" d="M616,140 L667,140 L667,196.026315789 L616,196.026315789 Z" tabindex="0" role="button" aria-label="WC"><title>WC</title></path>
+<path id="pietro-2-211" class="room" data-room-id="211" data-level="pietro-2" data-name="211" fill-rule="evenodd" clip-rule="evenodd" d="M723,139 L844,139 L844,196.026315789 L723,196.026315789 Z" tabindex="0" role="button" aria-label="211"><title>211</title></path>
+<path id="pietro-2-210" class="room" data-room-id="210" data-level="pietro-2" data-name="210" fill-rule="evenodd" clip-rule="evenodd" d="M848,139 L967,139 L967,196.026315789 L848,196.026315789 Z" tabindex="0" role="button" aria-label="210"><title>210</title></path>
 </g><g id="details" pointer-events="none">
-<path d="M114,111 L140,111 L140,157 L114,157 Z" class="detail-solid"/>
-<path d="M114,115 H140" class="detail-line"/>
-<path d="M114,119 H140" class="detail-line"/>
-<path d="M114,123 H140" class="detail-line"/>
-<path d="M114,127 H140" class="detail-line"/>
-<path d="M114,131 H140" class="detail-line"/>
-<path d="M114,135 H140" class="detail-line"/>
-<path d="M114,139 H140" class="detail-line"/>
-<path d="M114,143 H140" class="detail-line"/>
-<path d="M114,147 H140" class="detail-line"/>
-<path d="M114,151 H140" class="detail-line"/>
-<path d="M114,155 H140" class="detail-line"/>
-<path d="M627,107 L667,107 L667,134 L627,134 Z" class="detail-solid"/>
-<path d="M631,107 V134" class="detail-line"/>
-<path d="M635,107 V134" class="detail-line"/>
-<path d="M639,107 V134" class="detail-line"/>
-<path d="M643,107 V134" class="detail-line"/>
-<path d="M647,107 V134" class="detail-line"/>
-<path d="M651,107 V134" class="detail-line"/>
-<path d="M655,107 V134" class="detail-line"/>
-<path d="M659,107 V134" class="detail-line"/>
-<path d="M663,107 V134" class="detail-line"/>
+<path d="M114,105.505263158 L140,105.505263158 L140,157 L114,157 Z" class="detail-solid"/>
+<path d="M114,109.505263158 H140" class="detail-line"/>
+<path d="M114,113.505263158 H140" class="detail-line"/>
+<path d="M114,117.505263158 H140" class="detail-line"/>
+<path d="M114,121.505263158 H140" class="detail-line"/>
+<path d="M114,125.505263158 H140" class="detail-line"/>
+<path d="M114,129.505263158 H140" class="detail-line"/>
+<path d="M114,133.505263158 H140" class="detail-line"/>
+<path d="M114,137.505263158 H140" class="detail-line"/>
+<path d="M114,141.505263158 H140" class="detail-line"/>
+<path d="M114,145.505263158 H140" class="detail-line"/>
+<path d="M114,149.505263158 H140" class="detail-line"/>
+<path d="M114,153.505263158 H140" class="detail-line"/>
+<path d="M617,107 L667,107 L667,134 L617,134 Z" class="detail-solid"/>
+<path d="M621,107 V134" class="detail-line"/>
+<path d="M625,107 V134" class="detail-line"/>
+<path d="M629,107 V134" class="detail-line"/>
+<path d="M633,107 V134" class="detail-line"/>
+<path d="M637,107 V134" class="detail-line"/>
+<path d="M641,107 V134" class="detail-line"/>
+<path d="M645,107 V134" class="detail-line"/>
+<path d="M649,107 V134" class="detail-line"/>
+<path d="M653,107 V134" class="detail-line"/>
+<path d="M657,107 V134" class="detail-line"/>
+<path d="M661,107 V134" class="detail-line"/>
+<path d="M665,107 V134" class="detail-line"/>
 </g><g id="labels" aria-hidden="true">
-<text class="room-label"><tspan x="93" y="49.66" class="label-number">201</tspan></text>
+<text class="room-label"><tspan x="93" y="49.99" class="label-number">201</tspan></text>
 
-<text class="room-label"><tspan x="219.5" y="49.66" class="label-number">202</tspan></text>
+<text class="room-label"><tspan x="232" y="49.99" class="label-number">202</tspan></text>
 
-<text class="room-label"><tspan x="343.5" y="49.66" class="label-number">203</tspan></text>
+<text class="room-label"><tspan x="349.5" y="49.99" class="label-number">203</tspan></text>
 
-<text class="room-label"><tspan x="469" y="49.66" class="label-number">204</tspan></text>
-<text class="room-label"><tspan x="569.5" y="49.66" class="label-number">205</tspan></text>
-<text class="room-label"><tspan x="668.5" y="49.66" class="label-number">206</tspan></text>
+<text class="room-label"><tspan x="462" y="49.99" class="label-number">204</tspan></text>
+<text class="room-label"><tspan x="569.5" y="49.99" class="label-number">205</tspan></text>
+<text class="room-label"><tspan x="668.5" y="49.99" class="label-number">206</tspan></text>
 <text class="room-label"><tspan x="770.5" y="76.66" class="label-number">207</tspan></text>
 <text class="room-label"><tspan x="870" y="76.66" class="label-number">208</tspan></text>
 <text class="room-label"><tspan x="953.5" y="92.16" class="label-number">209</tspan></text>
-<text class="room-label label-size-9"><tspan x="641.5" y="165.21" class="label-name">WC /</tspan><tspan x="641.5" y="175.56" class="label-name">umywalnia</tspan></text>
+<text class="room-label"><tspan x="641.5" y="172.17" class="label-name">WC</tspan></text>
 
-<text class="room-label"><tspan x="796.5" y="171.16" class="label-number">211</tspan></text>
+<text class="room-label"><tspan x="783.5" y="171.67" class="label-number">211</tspan></text>
 
-<text class="room-label"><tspan x="920" y="171.16" class="label-number">210</tspan></text>
-</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="pietro-2" data-node="n417" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="114" y="111" width="26" height="46"/><circle cx="127.0" cy="133.0"/><text x="127.0" y="136.5">A</text></g><g class="stair-target" data-stair="B" data-stair-level="pietro-2" data-node="n418" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="627" y="107" width="40" height="27"/><circle cx="647.0" cy="120.0"/><text x="647.0" y="123.5">B</text></g></g></svg>
+<text class="room-label"><tspan x="907.5" y="171.67" class="label-number">210</tspan></text>
+</g><g class="stairway-layer" aria-label="Klatki schodowe"><g class="stair-target" data-stair="A" data-stair-level="pietro-2" data-node="n417" tabindex="0" role="button" aria-label="A · Schody zachodnie"><title>A · Schody zachodnie – przejścia między piętrami</title><rect x="114" y="105.505263158" width="26" height="51.494736842"/><circle cx="127" cy="131.252631579"/><path class="transition-icon" transform="translate(127 131.252631579)" d="M-5.5,4.5 H-2.5 V1.5 H0.5 V-1.5 H3.5 V-4.5 H5.5" aria-hidden="true"/></g><g class="stair-target" data-stair="B" data-stair-level="pietro-2" data-node="n418" tabindex="0" role="button" aria-label="B · Schody centralne"><title>B · Schody centralne – przejścia między piętrami</title><rect x="617" y="107" width="50" height="27"/><circle cx="642" cy="120.5"/><path class="transition-icon" transform="translate(642 120.5)" d="M-5.5,4.5 H-2.5 V1.5 H0.5 V-1.5 H3.5 V-4.5 H5.5" aria-hidden="true"/></g></g></svg>
