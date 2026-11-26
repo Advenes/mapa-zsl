@@ -2,18 +2,26 @@
   const viewport = document.getElementById('map-viewport');
   const zoomOut = document.getElementById('map-zoom-out');
   const zoomIn = document.getElementById('map-zoom-in');
-  const fit = document.getElementById('map-fit');
+  const fitButton = document.getElementById('map-fit');
   const maxZoom = 6;
   const maxRouteZoom = 2.5;
   const zoomStep = 1.3;
   const dragThreshold = 6;
+  const minRouteLengthForArrows = 48;
+  const routeArrowSpacing = 170;
+  const clickSuppressionTime = 450;
   const center = {x: 0.5, y: 0.5};
   const mobileLayout = matchMedia('(max-width: 650px)');
   const mapPage = viewport.closest('main');
   const pointers = new Map();
-  let svg, originalViewBox, mapBounds, bounds, view;
+  // SVG coordinates of the complete plan, the fitted viewport, and the current zoomed view.
+  let svg;
+  let originalViewBox;
+  let mapBounds;
+  let fittedFrame;
+  let view;
   let routeLayer = null;
-  let followRoute = false;
+  let autoFitRoute = false;
   let dragging = false;
   let suppressClickUntil = 0;
 
@@ -45,11 +53,15 @@
     }
 
     const arrows = document.createDocumentFragment();
-    const count = length < 48 ? 0 : Math.max(1, Math.floor(length / 170));
+    const count = length < minRouteLengthForArrows
+      ? 0
+      : Math.max(1, Math.floor(length / routeArrowSpacing));
     let index = 0;
     for (let i = 1; i <= count; i++) {
       const offset = length * i / (count + 1);
-      while (offset > segments[index].offset + segments[index].size) index++;
+      while (offset > segments[index].offset + segments[index].size) {
+        index++;
+      }
       const segment = segments[index];
       const fraction = (offset - segment.offset) / segment.size;
       const x = segment.start.x + segment.dx * fraction;
@@ -67,15 +79,16 @@
 
   function render() {
     const {x, y, width, height, zoom} = view;
-    svg.setAttribute('viewBox', zoom === 1 && bounds === mapBounds ? originalViewBox : `${x} ${y} ${width} ${height}`);
+    const useOriginalViewBox = zoom === 1 && fittedFrame === mapBounds;
+    svg.setAttribute('viewBox', useOriginalViewBox ? originalViewBox : `${x} ${y} ${width} ${height}`);
     zoomOut.disabled = zoom <= 1;
-    fit.disabled = zoom === 1 && !followRoute;
+    fitButton.disabled = zoom === 1 && !autoFitRoute;
     zoomIn.disabled = zoom === maxZoom;
     viewport.classList.toggle('is-zoomed', zoom > 1);
     renderRouteArrows();
   }
 
-  function fittedBounds() {
+  function getFittedFrame() {
     const fillsViewport = mobileLayout.matches || mapPage.classList.contains('has-route');
     if (!fillsViewport || !viewport.clientWidth || !viewport.clientHeight) return mapBounds;
     const ratio = viewport.clientWidth / viewport.clientHeight;
@@ -95,8 +108,8 @@
   }
 
   function setView(zoom, x, y, limits = mapBounds) {
-    const width = bounds.width / zoom;
-    const height = bounds.height / zoom;
+    const width = fittedFrame.width / zoom;
+    const height = fittedFrame.height / zoom;
     view = {
       x: constrainOffset(x, width, limits.x, limits.width),
       y: constrainOffset(y, height, limits.y, limits.height),
@@ -108,14 +121,15 @@
   }
 
   function fitMap() {
-    bounds = fittedBounds();
-    setView(1, bounds.x, bounds.y);
+    fittedFrame = getFittedFrame();
+    setView(1, fittedFrame.x, fittedFrame.y);
   }
 
-  function routeBounds() {
+  function getRouteBounds() {
     const box = routeLayer.getBBox();
     if (routeLayer.parentElement === svg) return box;
 
+    // The workshop route lives inside a rotated SVG group. Convert its bounds to the root viewBox.
     const transform = svg.getScreenCTM().inverse().multiply(routeLayer.getScreenCTM());
     const points = [
       [box.x, box.y], [box.x + box.width, box.y],
@@ -128,15 +142,15 @@
   }
 
   function fitRoute() {
-    const {x, y, width, height} = routeBounds();
+    const {x, y, width, height} = getRouteBounds();
     const screenWidth = viewport.clientWidth;
     const screenHeight = viewport.clientHeight;
     const margin = Math.min(32, screenWidth * 0.09, screenHeight * 0.09);
-    const zoom = Math.min(maxRouteZoom,
-      bounds.width * (1 - 2 * margin / screenWidth) / width,
-      bounds.height * (1 - 2 * margin / screenHeight) / height);
-    const viewWidth = bounds.width / zoom;
-    const viewHeight = bounds.height / zoom;
+    const horizontalFit = fittedFrame.width * (1 - 2 * margin / screenWidth) / width;
+    const verticalFit = fittedFrame.height * (1 - 2 * margin / screenHeight) / height;
+    const zoom = Math.min(maxRouteZoom, horizontalFit, verticalFit);
+    const viewWidth = fittedFrame.width / zoom;
+    const viewHeight = fittedFrame.height / zoom;
     const marginX = margin * viewWidth / screenWidth;
     const marginY = margin * viewHeight / screenHeight;
     const left = Math.min(mapBounds.x, x - marginX);
@@ -149,15 +163,20 @@
 
   function resizeMap() {
     if (!svg) return;
-    const next = fittedBounds();
-    if (next.width === bounds.width && next.height === bounds.height) {
+    const next = getFittedFrame();
+    if (next.width === fittedFrame.width && next.height === fittedFrame.height) {
       renderRouteArrows();
       return;
     }
     const {x, y, width, height, zoom} = view;
-    bounds = next;
-    if (followRoute) fitRoute();
-    else setView(zoom, x + (width - bounds.width / zoom) / 2, y + (height - bounds.height / zoom) / 2);
+    fittedFrame = next;
+    if (autoFitRoute) {
+      fitRoute();
+      return;
+    }
+    const centeredX = x + (width - fittedFrame.width / zoom) / 2;
+    const centeredY = y + (height - fittedFrame.height / zoom) / 2;
+    setView(zoom, centeredX, centeredY);
   }
 
   function selectMap() {
@@ -172,7 +191,7 @@
     const [x, y, width, height] = originalViewBox.split(/[\s,]+/).map(Number);
     mapBounds = {x, y, width, height};
     routeLayer = null;
-    followRoute = false;
+    autoFitRoute = false;
     fitMap();
   }
 
@@ -181,9 +200,9 @@
     const next = svg?.querySelector('.route-layer:not([hidden])') ?? null;
     if (next === routeLayer) return;
     routeLayer = next;
-    followRoute = Boolean(next);
-    bounds = fittedBounds();
-    if (followRoute) fitRoute();
+    autoFitRoute = Boolean(next);
+    fittedFrame = getFittedFrame();
+    if (autoFitRoute) fitRoute();
     else fitMap();
   }
 
@@ -196,18 +215,20 @@
     };
   }
 
-  function moveView(factor, from, to = from) {
-    followRoute = false;
+  function moveView(factor, fromAnchor, toAnchor = fromAnchor) {
+    autoFitRoute = false;
     const zoom = clamp(view.zoom * factor, Math.min(1, view.zoom), maxZoom);
-    const width = bounds.width / zoom;
-    const height = bounds.height / zoom;
-    setView(zoom, view.x + from.x * view.width - to.x * width, view.y + from.y * view.height - to.y * height);
+    const width = fittedFrame.width / zoom;
+    const height = fittedFrame.height / zoom;
+    const x = view.x + fromAnchor.x * view.width - toAnchor.x * width;
+    const y = view.y + fromAnchor.y * view.height - toAnchor.y * height;
+    setView(zoom, x, y);
   }
 
   zoomOut.addEventListener('click', () => moveView(1 / zoomStep, center));
   zoomIn.addEventListener('click', () => moveView(zoomStep, center));
-  fit.addEventListener('click', () => {
-    followRoute = false;
+  fitButton.addEventListener('click', () => {
+    autoFitRoute = false;
     fitMap();
   });
   viewport.addEventListener('wheel', event => {
@@ -219,6 +240,7 @@
     moveView(Math.exp(-event.deltaY * unit * 0.0025), anchor);
   }, {passive: false});
 
+  // Mouse and touch panning share the same pointer state.
   function startDragging() {
     dragging = true;
     viewport.classList.add('is-dragging');
@@ -258,7 +280,7 @@
 
   function endPointer(event) {
     if (!pointers.delete(event.pointerId)) return;
-    if (dragging) suppressClickUntil = performance.now() + 450;
+    if (dragging) suppressClickUntil = performance.now() + clickSuppressionTime;
     if (!pointers.size) {
       dragging = false;
       viewport.classList.remove('is-dragging');

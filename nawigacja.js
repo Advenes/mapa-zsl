@@ -1,55 +1,312 @@
-
-
 'use strict';
-const G=JSON.parse(document.getElementById('graph-data').textContent), N=G.nodes, P=G.places, byId=new Map(P.map(p=>[p.id,p])), $=id=>document.getElementById(id), ns='http://www.w3.org/2000/svg';
-const namedPlaces = P.filter(place => place.named);
-// Weighted undirected graph. All horizontal weights are geometric lengths; stair/transfer weights are explicit estimates.
-const adj=new Map(Object.keys(N).map(id=>[id,[]]));
-for(const e of G.edges){adj.get(e.a).push({to:e.b,...e});adj.get(e.b).push({to:e.a,...e});}
-class MinHeap{constructor(){this.a=[]}push(v){let a=this.a,i=a.length;a.push(v);while(i){let p=(i-1)>>1;if(a[p][0]<=v[0])break;a[i]=a[p];i=p;}a[i]=v;}pop(){let a=this.a,r=a[0],v=a.pop();if(a.length){let i=0;while(i*2+1<a.length){let j=i*2+1;if(j+1<a.length&&a[j+1][0]<a[j][0])j++;if(a[j][0]>=v[0])break;a[i]=a[j];i=j;}a[i]=v;}return r;}get size(){return this.a.length;}}
-function dijkstra(start,end,allowAssumed=false){if(!adj.has(start)||!adj.has(end))return null;const dist=new Map([[start,0]]),prev=new Map(),queue=new MinHeap();queue.push([0,start]);while(queue.size){const [d,u]=queue.pop();if(d!==dist.get(u))continue;if(u===end){let path=[u],edges=[];while(path[0]!==start){const p=prev.get(path[0]);edges.unshift(p.edge);path.unshift(p.from);}return {distance:d,path,edges};}for(const e of adj.get(u)){if(!allowAssumed&&e.kind==='assumed')continue;const n=d+e.weight;if(n<(dist.get(e.to)??Infinity)){dist.set(e.to,n);prev.set(e.to,{from:u,edge:e});queue.push([n,e.to]);}}}return null;}
-let chosen={start:byId.get(G.start),end:null},selected=null,result=null,legs=[],activeLevel='parter',activeLeg=-1;
-const norm=s=>String(s??'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ł/g,'l').replace(/\s+/g,' ').trim();
-const numNorm=s=>norm(s).replace(/^0+(?=\d)/,'');
-const label=p=>p.displayName||[p.number,p.name].filter(Boolean).join(' – ')||'Pomieszczenie bez opisu';
-const numeric=s=>/^\d+[a-z]*$/.test(s);
-function search(q){const v=norm(q), vn=numNorm(v);return namedPlaces.map(p=>{const n=norm(p.number),t=norm(p.name),l=norm(label(p)),id=norm(p.id);let rank=99;
-if(!v){if(p.number||p.name)rank=0;}
-else if(v===id)rank=0;
-else if(n&&n===v)rank=0;
-else if(t&&t===v||l===v&&(p.number||p.name))rank=1;
-else if(n&&numeric(v)&&numNorm(n)===vn)rank=2;
-else if(n&&n.startsWith(v))rank=3;
-else if(t&&t.startsWith(v))rank=4;
-else if(n&&numeric(v)&&numNorm(n).startsWith(vn))rank=5;
-else if((p.number||p.name)&&[t,l,n].some(x=>x.includes(v)))rank=6;
-else if(id.includes(v)&&v.includes('bez-numeru'))rank=7;
-return {p,rank};}).filter(x=>x.rank<99).sort((a,b)=>a.rank-b.rank||label(a.p).localeCompare(label(b.p),'pl',{numeric:true})||a.p.id.localeCompare(b.p.id,'pl',{numeric:true})).map(x=>x.p);}
-function exactMatches(q){const v=norm(q);if(!v)return [];const place=byId.get(q.trim());if(place)return place.named?[place]:[];const exact=namedPlaces.filter(p=>(p.number&&norm(p.number)===v)||(p.name&&norm(p.name)===v)||norm(label(p))===v);if(exact.length)return exact;return numeric(v)?namedPlaces.filter(p=>p.number&&numNorm(p.number)===numNorm(v)):[];}
-function choose(which,p){if(!p?.named)return;chosen[which]=p;$(which).value=label(p);if(which==='end')setDestinationPrompt(false);hide(which);if(chosen.start&&chosen.end)run();}
-function hide(which){$(which+'-options').hidden=true;$(which).setAttribute('aria-expanded','false');$(which).removeAttribute('aria-activedescendant');}
-for(const which of ['start','end']){const input=$(which),list=$(which+'-options');let items=[],index=-1;
-function mark(){Array.from(list.children).forEach((b,i)=>{b.classList.toggle('active',i===index);b.setAttribute('aria-selected',String(i===index));});if(index>=0){input.setAttribute('aria-activedescendant',list.children[index].id);list.children[index].scrollIntoView({block:'nearest'});}}
-function show(){items=search(input.value);index=-1;input.removeAttribute('aria-activedescendant');list.replaceChildren();items.forEach((p,i)=>{const b=document.createElement('button');b.type='button';b.id=which+'-option-'+i;b.dataset.placeId=p.id;b.setAttribute('role','option');b.setAttribute('aria-selected','false');b.textContent=label(p);const detail=document.createElement('small');const duplicate=P.some(x=>x.id!==p.id&&x.level===p.level&&label(x)===label(p));detail.textContent=G.levels[p.level]+(duplicate?' · '+p.id.split('-').slice(-2).join('-'):'');b.append(detail);b.addEventListener('mousedown',e=>e.preventDefault());b.addEventListener('click',()=>choose(which,p));list.append(b);});if(!items.length){const b=document.createElement('div');b.textContent='Brak pasujących pomieszczeń';b.style.padding='10px';list.append(b);}list.hidden=false;input.setAttribute('aria-expanded','true');}
-input.addEventListener('input',()=>{chosen[which]=null;if(which==='end'&&input.value.trim())setDestinationPrompt(false);clearRoute();show();});input.addEventListener('focus',show);input.addEventListener('blur',()=>hide(which));input.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(list.hidden)show();if(items.length){index=index<0?(e.key==='ArrowDown'?0:items.length-1):(index+(e.key==='ArrowDown'?1:-1)+items.length)%items.length;mark();}}else if(e.key==='Enter'){e.preventDefault();if(!list.hidden&&index>=0){choose(which,items[index]);return;}const exact=exactMatches(input.value);if(exact.length===1){choose(which,exact[0]);return;}if(!list.hidden&&items.length===1){choose(which,items[0]);return;}if(chosen[which]){run();return;}show();error('Wybierz konkretne pomieszczenie z listy podpowiedzi.');}else if(e.key==='Escape')hide(which);});}
-function resolve(which){if(chosen[which])return chosen[which];const exact=exactMatches($(which).value);if(exact.length===1){chosen[which]=exact[0];$(which).value=label(exact[0]);return exact[0];}return null;}
+
+const getById = id => document.getElementById(id);
+const svgNamespace = 'http://www.w3.org/2000/svg';
+const graph = JSON.parse(getById('graph-data').textContent);
+const {nodes, places} = graph;
+const placesById = new Map(places.map(place => [place.id, place]));
+const namedPlaces = places.filter(place => place.named);
+
+// The graph is undirected. Stair and transfer weights are estimates.
+const adjacency = new Map(Object.keys(nodes).map(id => [id, []]));
+for (const edge of graph.edges) {
+  adjacency.get(edge.a).push({to: edge.b, ...edge});
+  adjacency.get(edge.b).push({to: edge.a, ...edge});
+}
+
+class MinHeap {
+  constructor() {
+    this.entries = [];
+  }
+
+  push(entry) {
+    const entries = this.entries;
+    let index = entries.length;
+    entries.push(entry);
+
+    while (index > 0) {
+      const parent = (index - 1) >> 1;
+      if (entries[parent][0] <= entry[0]) break;
+      entries[index] = entries[parent];
+      index = parent;
+    }
+    entries[index] = entry;
+  }
+
+  pop() {
+    const entries = this.entries;
+    const first = entries[0];
+    const last = entries.pop();
+    if (entries.length === 0) return first;
+
+    let index = 0;
+    while (index * 2 + 1 < entries.length) {
+      let child = index * 2 + 1;
+      if (child + 1 < entries.length && entries[child + 1][0] < entries[child][0]) child++;
+      if (entries[child][0] >= last[0]) break;
+      entries[index] = entries[child];
+      index = child;
+    }
+    entries[index] = last;
+    return first;
+  }
+
+  get size() {
+    return this.entries.length;
+  }
+}
+
+function dijkstra(start, end, allowAssumed = false) {
+  if (!adjacency.has(start) || !adjacency.has(end)) return null;
+
+  const distances = new Map([[start, 0]]);
+  const previous = new Map();
+  const queue = new MinHeap();
+  queue.push([0, start]);
+
+  while (queue.size) {
+    const [distance, current] = queue.pop();
+    if (distance !== distances.get(current)) continue;
+    if (current === end) {
+      const path = [end];
+      const edges = [];
+      let node = end;
+      while (node !== start) {
+        const {from, edge} = previous.get(node);
+        edges.push(edge);
+        path.push(from);
+        node = from;
+      }
+      return {distance, path: path.reverse(), edges: edges.reverse()};
+    }
+
+    for (const edge of adjacency.get(current)) {
+      if (!allowAssumed && edge.kind === 'assumed') continue;
+      const nextDistance = distance + edge.weight;
+      if (nextDistance < (distances.get(edge.to) ?? Infinity)) {
+        distances.set(edge.to, nextDistance);
+        previous.set(edge.to, {from: current, edge});
+        queue.push([nextDistance, edge.to]);
+      }
+    }
+  }
+  return null;
+}
+
+let chosen = {start: placesById.get(graph.start), end: null};
+let selectedRoom = null;
+let selectedStair = null;
+let legs = [];
+let activeLeg = -1;
+
+function normalizeText(value) {
+  return String(value ?? '').toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ł/g, 'l')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const normalizeNumber = value => normalizeText(value).replace(/^0+(?=\d)/, '');
+const isRoomNumber = value => /^\d+[a-z]*$/.test(value);
+const placeLabel = place => place.displayName ||
+  [place.number, place.name].filter(Boolean).join(' – ') || 'Pomieszczenie bez opisu';
+
+// Rank exact IDs and numbers before names, prefixes, and partial matches.
+function matchRank(place, query, queryNumber) {
+  const number = normalizeText(place.number);
+  const name = normalizeText(place.name);
+  const display = normalizeText(placeLabel(place));
+  const id = normalizeText(place.id);
+  const hasLabel = Boolean(place.number || place.name);
+  const compareNumber = number && isRoomNumber(query);
+
+  if (!query) return hasLabel ? 0 : Infinity;
+  if (query === id || (number && query === number)) return 0;
+  if ((name && query === name) || (hasLabel && query === display)) return 1;
+  if (compareNumber && normalizeNumber(number) === queryNumber) return 2;
+  if (number && number.startsWith(query)) return 3;
+  if (name && name.startsWith(query)) return 4;
+  if (compareNumber && normalizeNumber(number).startsWith(queryNumber)) return 5;
+  if (hasLabel && [name, display, number].some(value => value.includes(query))) return 6;
+  if (query.includes('bez-numeru') && id.includes(query)) return 7;
+  return Infinity;
+}
+
+function search(value) {
+  const query = normalizeText(value);
+  const queryNumber = normalizeNumber(query);
+  const sortOptions = {numeric: true};
+  return namedPlaces
+    .map(place => ({place, rank: matchRank(place, query, queryNumber)}))
+    .filter(({rank}) => Number.isFinite(rank))
+    .sort((a, b) => a.rank - b.rank ||
+      placeLabel(a.place).localeCompare(placeLabel(b.place), 'pl', sortOptions) ||
+      a.place.id.localeCompare(b.place.id, 'pl', sortOptions))
+    .map(({place}) => place);
+}
+
+function exactMatches(value) {
+  const query = normalizeText(value);
+  if (!query) return [];
+
+  const place = placesById.get(value.trim());
+  if (place) return place.named ? [place] : [];
+
+  const exact = namedPlaces.filter(place =>
+    (place.number && normalizeText(place.number) === query) ||
+    (place.name && normalizeText(place.name) === query) ||
+    normalizeText(placeLabel(place)) === query);
+  if (exact.length || !isRoomNumber(query)) return exact;
+  return namedPlaces.filter(place => place.number && normalizeNumber(place.number) === normalizeNumber(query));
+}
+
+function choosePlace(field, place) {
+  if (!place?.named) return;
+  chosen[field] = place;
+  getById(field).value = placeLabel(place);
+  if (field === 'end') setDestinationPrompt(false);
+  hideOptions(field);
+  if (chosen.start && chosen.end) run();
+}
+
+function hideOptions(field) {
+  const input = getById(field);
+  getById(field + '-options').hidden = true;
+  input.setAttribute('aria-expanded', 'false');
+  input.removeAttribute('aria-activedescendant');
+}
+
+function setupPlaceSearch(field) {
+  const input = getById(field);
+  const list = getById(field + '-options');
+  let matches = [];
+  let activeIndex = -1;
+
+  function highlightOption() {
+    Array.from(list.children).forEach((option, index) => {
+      const active = index === activeIndex;
+      option.classList.toggle('active', active);
+      option.setAttribute('aria-selected', String(active));
+    });
+    if (activeIndex < 0) return;
+    const option = list.children[activeIndex];
+    input.setAttribute('aria-activedescendant', option.id);
+    option.scrollIntoView({block: 'nearest'});
+  }
+
+  function showOptions() {
+    matches = search(input.value);
+    activeIndex = -1;
+    input.removeAttribute('aria-activedescendant');
+    list.replaceChildren();
+
+    matches.forEach((place, index) => {
+      const option = document.createElement('button');
+      option.type = 'button';
+      option.id = field + '-option-' + index;
+      option.dataset.placeId = place.id;
+      option.setAttribute('role', 'option');
+      option.setAttribute('aria-selected', 'false');
+      option.textContent = placeLabel(place);
+
+      const detail = document.createElement('small');
+      const duplicate = places.some(other => other.id !== place.id &&
+        other.level === place.level && placeLabel(other) === placeLabel(place));
+      detail.textContent = graph.levels[place.level] +
+        (duplicate ? ' · ' + place.id.split('-').slice(-2).join('-') : '');
+      option.append(detail);
+      option.addEventListener('mousedown', event => event.preventDefault());
+      option.addEventListener('click', () => choosePlace(field, place));
+      list.append(option);
+    });
+    if (!matches.length) {
+      const message = document.createElement('div');
+      message.textContent = 'Brak pasujących pomieszczeń';
+      message.style.padding = '10px';
+      list.append(message);
+    }
+    list.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  input.addEventListener('input', () => {
+    chosen[field] = null;
+    if (field === 'end' && input.value.trim()) setDestinationPrompt(false);
+    clearRoute();
+    showOptions();
+  });
+  input.addEventListener('focus', showOptions);
+  input.addEventListener('blur', () => hideOptions(field));
+  input.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      hideOptions(field);
+      return;
+    }
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (list.hidden) showOptions();
+      if (matches.length) {
+        const offset = event.key === 'ArrowDown' ? 1 : -1;
+        activeIndex = activeIndex < 0
+          ? (offset === 1 ? 0 : matches.length - 1)
+          : (activeIndex + offset + matches.length) % matches.length;
+        highlightOption();
+      }
+      return;
+    }
+    if (event.key !== 'Enter') return;
+    event.preventDefault();
+
+    if (!list.hidden && activeIndex >= 0) {
+      choosePlace(field, matches[activeIndex]);
+      return;
+    }
+    const exact = exactMatches(input.value);
+    if (exact.length === 1) {
+      choosePlace(field, exact[0]);
+    } else if (!list.hidden && matches.length === 1) {
+      choosePlace(field, matches[0]);
+    } else if (chosen[field]) {
+      run();
+    } else {
+      showOptions();
+      showError('Wybierz konkretne pomieszczenie z listy podpowiedzi.');
+    }
+  });
+}
+
+function resolvePlace(field) {
+  if (chosen[field]) return chosen[field];
+  const input = getById(field);
+  const exact = exactMatches(input.value);
+  if (exact.length !== 1) return null;
+
+  const [place] = exact;
+  chosen[field] = place;
+  input.value = placeLabel(place);
+  return place;
+}
+
+setupPlaceSearch('start');
+setupPlaceSearch('end');
+
+// Floor controls and map popups.
 function switchLevel(level, index = legs[activeLeg]?.level === level ? activeLeg : legs.findIndex(leg => leg.level === level)) {
-  if (selected && selected.dataset.level !== level) clearRoomSelection();
+  if (selectedRoom && selectedRoom.dataset.level !== level) clearRoomSelection();
   if (selectedStair) clearStairSelection();
-  activeLevel = level;
   activeLeg = index;
   document.querySelectorAll('[data-target]').forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.target === level)));
   document.querySelectorAll('[data-map]').forEach(map => map.hidden = map.dataset.map !== level);
   document.querySelectorAll('[data-route-leg]').forEach(layer => layer.toggleAttribute('hidden', Number(layer.dataset.routeLeg) !== index));
   showInstruction();
 }
-const roomPopup = $('room-popup');
-const stairPopup = $('stair-popup');
-let selectedStair = null;
-const mapViewport = $('map-viewport');
+const roomPopup = getById('room-popup');
+const stairPopup = getById('stair-popup');
+const mapViewport = getById('map-viewport');
 const mapCard = roomPopup.parentElement;
-const routeControls = $('route-controls');
-const routeControlsToggle = $('route-controls-toggle');
+const routeControls = getById('route-controls');
+const routeControlsToggle = getById('route-controls-toggle');
 const routePage = mapCard.closest('main');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -111,10 +368,10 @@ function positionMapPopup(anchorElement, popup) {
 
 let popupFrame = 0;
 function schedulePopupPosition() {
-  if ((!selected && !selectedStair) || popupFrame) return;
+  if ((!selectedRoom && !selectedStair) || popupFrame) return;
   popupFrame = requestAnimationFrame(() => {
     popupFrame = 0;
-    if (selected) positionMapPopup(selected, roomPopup);
+    if (selectedRoom) positionMapPopup(selectedRoom, roomPopup);
     if (selectedStair) positionMapPopup(selectedStair, stairPopup);
   });
 }
@@ -125,26 +382,26 @@ new MutationObserver(schedulePopupPosition).observe(mapViewport, {
 });
 
 function clearRoomSelection() {
-  selected.classList.remove('selected');
-  selected.setAttribute('aria-expanded', 'false');
-  selected = null;
+  selectedRoom.classList.remove('selected');
+  selectedRoom.setAttribute('aria-expanded', 'false');
+  selectedRoom = null;
   roomPopup.hidden = true;
 }
 
 function selectRoom(room, focusActions = false) {
-  const place = byId.get(room.id);
+  const place = placesById.get(room.id);
   if (!place?.named) return;
   if (selectedStair) clearStairSelection();
-  const alreadySelected = room === selected;
-  if (selected) clearRoomSelection();
+  const alreadySelected = room === selectedRoom;
+  if (selectedRoom) clearRoomSelection();
   if (alreadySelected) return;
-  selected = room;
+  selectedRoom = room;
   room.classList.add('selected');
   room.setAttribute('aria-expanded', 'true');
-  $('room-name').textContent = label(place);
+  getById('room-name').textContent = placeLabel(place);
   roomPopup.hidden = false;
   positionMapPopup(room, roomPopup);
-  if (focusActions) $('use-start').focus({preventScroll: true});
+  if (focusActions) getById('use-start').focus({preventScroll: true});
 }
 
 for (const tab of document.querySelectorAll('[data-target]')) {
@@ -162,7 +419,7 @@ for (const room of document.querySelectorAll('path.room[role="button"]')) {
   });
 }
 document.addEventListener('click', event => {
-  if (selected && !event.target.closest('#room-popup, .map-tools, path.room[role="button"]')) {
+  if (selectedRoom && !event.target.closest('#room-popup, .map-tools, path.room[role="button"]')) {
     clearRoomSelection();
   }
   if (selectedStair && !event.target.closest('#stair-popup, .map-tools, .stair-target')) {
@@ -170,17 +427,22 @@ document.addEventListener('click', event => {
   }
 });
 document.addEventListener('keydown', event => {
-  const anchor = selected || selectedStair;
+  const anchor = selectedRoom || selectedStair;
   if (event.key !== 'Escape' || !anchor) return;
-  const popup = selected ? roomPopup : stairPopup;
+  const popup = selectedRoom ? roomPopup : stairPopup;
   const focusWasInPopup = popup.contains(document.activeElement);
-  if (selected) clearRoomSelection();
+  if (selectedRoom) clearRoomSelection();
   else clearStairSelection();
   if (focusWasInPopup) anchor.focus({preventScroll: true});
 });
-$('use-start').onclick = () => { if (selected) choose('start', byId.get(selected.id)); };
-$('use-end').onclick = () => { if (selected) choose('end', byId.get(selected.id)); };
-function svgEl(tag,attrs){let el=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);return el;}
+getById('use-start').onclick = () => { if (selectedRoom) choosePlace('start', placesById.get(selectedRoom.id)); };
+getById('use-end').onclick = () => { if (selectedRoom) choosePlace('end', placesById.get(selectedRoom.id)); };
+function createSvgElement(tag, attributes) {
+  const element = document.createElementNS(svgNamespace, tag);
+  for (const [name, value] of Object.entries(attributes)) element.setAttribute(name, value);
+  return element;
+}
+
 function planContents(svg) {
   return svg.querySelector('[data-plan-rotation]') || svg;
 }
@@ -188,53 +450,56 @@ function planContents(svg) {
 function drawPathNetwork(viewport) {
   const layers = new Map();
   for (const svg of viewport.querySelectorAll('svg[data-plan-level-svg]')) {
-    const layer = svgEl('g', {class: 'graph-layer', 'aria-hidden': 'true'});
+    const layer = createSvgElement('g', {class: 'graph-layer', 'aria-hidden': 'true'});
     const plan = planContents(svg);
     plan.insertBefore(layer, plan.querySelector('.stairway-layer, .passage-layer, .route-layer'));
     layers.set(svg.dataset.planLevelSvg, layer);
   }
-  for (const edge of G.edges) {
-    const a = N[edge.a], b = N[edge.b];
+  for (const edge of graph.edges) {
+    const a = nodes[edge.a], b = nodes[edge.b];
     if (a.level !== b.level) continue;
-    layers.get(a.level).append(svgEl('line', {
+    layers.get(a.level).append(createSvgElement('line', {
       x1: a.x, y1: a.y, x2: b.x, y2: b.y,
       class: edge.kind === 'assumed' ? 'uncertain' : '',
     }));
   }
 }
-const pathsButton = $('show-paths');
+const pathsButton = getById('show-paths');
 pathsButton.addEventListener('click', () => {
-  const viewport = $('map-viewport');
-  const showing = viewport.classList.toggle('show-path-network');
-  if (showing && !viewport.querySelector('.graph-layer')) drawPathNetwork(viewport);
+  const showing = mapViewport.classList.toggle('show-path-network');
+  if (showing && !mapViewport.querySelector('.graph-layer')) drawPathNetwork(mapViewport);
   pathsButton.setAttribute('aria-pressed', String(showing));
 });
+
+// Route state and transfer instructions.
 function clearRoute() {
-  result = null;
   legs = [];
   activeLeg = -1;
   showInstruction();
   document.querySelectorAll('.route-layer').forEach(layer => layer.remove());
   document.querySelectorAll('.destination,.origin,.on-route').forEach(el => el.classList.remove('destination','origin','on-route'));
   document.querySelectorAll('.stair-target.used').forEach(el => el.classList.remove('used'));
-  $('status').textContent = '';
-  $('reset').hidden = true;
+  getById('status').textContent = '';
+  getById('reset').hidden = true;
   showRouteView(false);
   if (selectedStair) clearStairSelection();
 }
-function error(msg) { $('status').textContent = msg; }
-const instructionPanel = $('route-instruction');
-const instructionNext = $('instruction-next');
+function showError(message) {
+  getById('status').textContent = message;
+}
+
+const instructionPanel = getById('route-instruction');
+const instructionNext = getById('instruction-next');
 
 function showInstruction() {
   const leg = legs[activeLeg];
   instructionPanel.hidden = !leg?.exit;
   if (!leg?.exit) {
-    $('instruction-text').textContent = '';
+    getById('instruction-text').textContent = '';
     return;
   }
-  $('instruction-text').textContent = transitionInstruction(leg);
-  instructionNext.setAttribute('aria-label', 'Przejdź do planu: ' + G.levels[leg.exit.to]);
+  getById('instruction-text').textContent = transitionInstruction(leg);
+  instructionNext.setAttribute('aria-label', 'Przejdź do planu: ' + graph.levels[leg.exit.to]);
 }
 
 instructionNext.onclick = () => {
@@ -244,21 +509,21 @@ instructionNext.onclick = () => {
 
 function transitionInstruction(leg) {
   const {edge, to} = leg.exit;
-  const destination = G.levels[to];
+  const destination = graph.levels[to];
   if (edge.stairId) {
     const goingUp = to === edge.upper;
     return (goingUp ? 'Wejdź' : 'Zejdź') + ' schodami na poziom „' + destination + '” (klatka ' + edge.stairId + ').';
   }
   if (edge.transferId === 'E') return 'Przejdź na zewnątrz do przejścia na poziom „' + destination + '”.';
   if (edge.transferId === 'D') return 'Przejdź przez drzwi do planu „' + destination + '”.';
-  if (edge.transferId === 'P') return 'Przejdź łącznikiem do planu „' + destination + '”.';
+  if (edge.transferId === 'places') return 'Przejdź łącznikiem do planu „' + destination + '”.';
   return 'Przejdź na poziom „' + destination + '”.';
 }
 
 function marker(layer, node, kind, caption) {
-  layer.append(svgEl('circle', {cx: node.x, cy: node.y, class: 'route-marker marker-' + kind}));
+  layer.append(createSvgElement('circle', {cx: node.x, cy: node.y, class: 'route-marker marker-' + kind}));
   const x = node.x + 10, y = node.y - 9;
-  const text = svgEl('text', {x, y, class: 'route-caption'});
+  const text = createSvgElement('text', {x, y, class: 'route-caption'});
   const rotation = Number(layer.parentElement.dataset.planRotation || 0);
   if (rotation) text.setAttribute('transform', 'rotate(' + -rotation + ' ' + x + ' ' + y + ')');
   text.textContent = caption;
@@ -282,25 +547,25 @@ function stairClick(target, focusOptions) {
     return;
   }
 
-  if (selected) clearRoomSelection();
+  if (selectedRoom) clearRoomSelection();
   const alreadySelected = target === selectedStair;
   if (selectedStair) clearStairSelection();
   if (alreadySelected) return;
-  const index = G.floorOrder.indexOf(stairLevel);
-  const options = $('stair-options');
+  const index = graph.floorOrder.indexOf(stairLevel);
+  const options = getById('stair-options');
   options.replaceChildren();
   for (const offset of [-1, 1]) {
-    const level = G.floorOrder[index + offset];
+    const level = graph.floorOrder[index + offset];
     if (!level) continue;
     const button = document.createElement('button');
     button.type = 'button';
-    button.textContent = (offset < 0 ? '↓ ' : '↑ ') + G.levels[level];
+    button.textContent = (offset < 0 ? '↓ ' : '↑ ') + graph.levels[level];
     button.onclick = () => switchLevel(level);
     options.append(button);
   }
   selectedStair = target;
   target.setAttribute('aria-expanded', 'true');
-  $('stair-name').textContent = G.stairwells[stairId].name;
+  getById('stair-name').textContent = graph.stairwells[stairId].name;
   stairPopup.hidden = false;
   positionMapPopup(target, stairPopup);
   if (focusOptions) options.firstElementChild?.focus({preventScroll: true});
@@ -329,57 +594,125 @@ for (const el of document.querySelectorAll('.stair-target')) {
     }
   });
 }
+// Route drawing.
 function transitionMarker(layer, node, target) {
   const center = target?.querySelector('circle');
   const cx = center?.getAttribute('cx') ?? node.x;
   const cy = center?.getAttribute('cy') ?? node.y;
-  layer.append(svgEl('circle', {cx, cy, class:'route-stair-ring'}));
+  layer.append(createSvgElement('circle', {cx, cy, class:'route-stair-ring'}));
   const icon = target?.querySelector('.transition-icon')?.cloneNode(true);
   if (icon) layer.append(icon);
 }
-function draw(start,end){let leg={level:N[result.path[0]].level,ids:[result.path[0]],enter:null,exit:null,distance:0};for(let i=0;i<result.edges.length;i++){const a=N[result.path[i]],b=N[result.path[i+1]],e=result.edges[i];if(a.level!==b.level){leg.exit={node:a,edge:e,to:b.level};legs.push(leg);leg={level:b.level,ids:[result.path[i+1]],enter:{node:b,edge:e,from:a.level},exit:null,distance:0};}else{leg.ids.push(result.path[i+1]);leg.distance+=e.weight;}}legs.push(leg);
-  for (const [index, l] of legs.entries()) {
-    const map = document.querySelector('[data-map="'+l.level+'"] svg');
-    const layer = svgEl('g', {class:'route-layer', 'aria-hidden':'true', 'data-route-leg':index});
-    planContents(map).append(layer);
-    if (l.ids.length > 1) {
-      const points = l.ids.map(id => N[id].x+','+N[id].y).join(' ');
-      layer.append(svgEl('polyline', {points, class:'route-halo'}));
-      layer.append(svgEl('polyline', {points, class:'route-line'}));
+function buildRouteLegs(route) {
+  const first = route.path[0];
+  const routeLegs = [];
+  let leg = {level: nodes[first].level, nodeIds: [first], edges: []};
+
+  for (const [index, edge] of route.edges.entries()) {
+    const from = nodes[route.path[index]];
+    const nextId = route.path[index + 1];
+    const to = nodes[nextId];
+    if (from.level === to.level) {
+      leg.nodeIds.push(nextId);
+      leg.edges.push(edge);
+      continue;
     }
-    for (let j = 0; j < l.ids.length-1; j++) {
-      const a = l.ids[j], b = l.ids[j+1];
-      const edge = result.edges.find(e => (e.a===a&&e.b===b)||(e.a===b&&e.b===a));
-      if (edge?.kind === 'assumed') {
-        const points = N[a].x+','+N[a].y+' '+N[b].x+','+N[b].y;
-        layer.append(svgEl('polyline', {points, class:'route-line route-uncertain'}));
-      }
-    }
-    if (l.ids.length > 1) layer.append(svgEl('g', {class: 'route-arrows'}));
-    const seen = new Set();
-    for (const trans of [l.enter, l.exit]) {
-      if (!trans) continue;
-      const {stairId, transferId} = trans.edge;
-      const transitionId = stairId || transferId;
-      if (transitionId) {
-        const selector = stairId ? '[data-stair="'+stairId+'"]' : '[data-transfer-id="'+transferId+'"]';
-        const target = map.querySelector(selector);
-        if (!seen.has(transitionId)) transitionMarker(layer, trans.node, target);
-        seen.add(transitionId);
-        target?.classList.add('used');
-      } else marker(layer, trans.node, 'uncertain', 'Przejście (orient.)');
-    }
-    document.querySelector('[data-target="'+l.level+'"]').classList.add('on-route');
-    if (index === 0) marker(layer,N[start.node],'origin','START');
-    if (index === legs.length-1) marker(layer,N[end.node],'destination','CEL');
+
+    leg.exit = {node: from, edge, to: to.level};
+    routeLegs.push(leg);
+    leg = {
+      level: to.level,
+      nodeIds: [nextId],
+      edges: [],
+      enter: {node: to, edge, from: from.level},
+    };
   }
-document.getElementById(start.id)?.classList.add('origin');document.getElementById(end.id)?.classList.add('destination');$('reset').hidden=false;switchLevel(start.level,0);showRouteView(true);}
-function run(){clearRoute();let a=resolve('start'),b=resolve('end');if(!a||!b){error('Wybierz punkt startowy i salę z listy podpowiedzi.');return;}result=dijkstra(a.node,b.node,false);if(!result){error('Brak potwierdzonego połączenia na planie.');return;}draw(a,b);}
+  routeLegs.push(leg);
+  return routeLegs;
+}
+
+function routePoints(nodeIds) {
+  return nodeIds.map(id => {
+    const {x, y} = nodes[id];
+    return x + ',' + y;
+  }).join(' ');
+}
+
+function drawRoute(route, start, end) {
+  legs = buildRouteLegs(route);
+  for (const [index, leg] of legs.entries()) {
+    const map = document.querySelector('[data-map="' + leg.level + '"] svg');
+    const layer = createSvgElement('g', {
+      class: 'route-layer',
+      'aria-hidden': 'true',
+      'data-route-leg': index,
+    });
+    planContents(map).append(layer);
+
+    if (leg.nodeIds.length > 1) {
+      const points = routePoints(leg.nodeIds);
+      layer.append(createSvgElement('polyline', {points, class: 'route-halo'}));
+      layer.append(createSvgElement('polyline', {points, class: 'route-line'}));
+      for (const [index, edge] of leg.edges.entries()) {
+        if (edge.kind !== 'assumed') continue;
+        const points = routePoints(leg.nodeIds.slice(index, index + 2));
+        layer.append(createSvgElement('polyline', {points, class: 'route-line route-uncertain'}));
+      }
+      layer.append(createSvgElement('g', {class: 'route-arrows'}));
+    }
+
+    const markedTransitions = new Set();
+    for (const transition of [leg.enter, leg.exit]) {
+      if (!transition) continue;
+      const {stairId, transferId} = transition.edge;
+      const transitionId = stairId || transferId;
+      if (!transitionId) {
+        marker(layer, transition.node, 'uncertain', 'Przejście (orient.)');
+        continue;
+      }
+
+      const selector = stairId ? '[data-stair="' + stairId + '"]' : '[data-transfer-id="' + transferId + '"]';
+      const target = map.querySelector(selector);
+      if (!markedTransitions.has(transitionId)) transitionMarker(layer, transition.node, target);
+      markedTransitions.add(transitionId);
+      target?.classList.add('used');
+    }
+
+    document.querySelector('[data-target="' + leg.level + '"]').classList.add('on-route');
+    if (index === 0) marker(layer, nodes[start.node], 'origin', 'START');
+    if (index === legs.length - 1) marker(layer, nodes[end.node], 'destination', 'CEL');
+  }
+
+  getById(start.id)?.classList.add('origin');
+  getById(end.id)?.classList.add('destination');
+  getById('reset').hidden = false;
+  switchLevel(start.level, 0);
+  showRouteView(true);
+}
+
+function run() {
+  clearRoute();
+  const start = resolvePlace('start');
+  const end = resolvePlace('end');
+  if (!start || !end) {
+    showError('Wybierz punkt startowy i salę z listy podpowiedzi.');
+    return;
+  }
+
+  const route = dijkstra(start.node, end.node);
+  if (!route) {
+    showError('Brak potwierdzonego połączenia na planie.');
+    return;
+  }
+  drawRoute(route, start, end);
+}
+
+// Initialise the navigation from a link or the default entrance.
 let guideDestinationFromLink = false;
 
 function setDestinationPrompt(show) {
-  $('end').classList.toggle('awaiting-destination', show);
-  $('end-label').textContent = show ? 'Dokąd? Wpisz numer lub nazwę' : 'Dokąd? Numer lub nazwa';
+  getById('end').classList.toggle('awaiting-destination', show);
+  getById('end-label').textContent = show ? 'Dokąd? Wpisz numer lub nazwę' : 'Dokąd? Numer lub nazwa';
 }
 
 function applyRouteLink() {
@@ -393,7 +726,7 @@ function applyRouteLink() {
     const matches = exactMatches(value);
     const place = matches.length === 1 ? matches[0] : null;
     chosen[field] = place;
-    $(field).value = place ? label(place) : value;
+    getById(field).value = place ? placeLabel(place) : value;
     if (!place) {
       const point = field === 'start' ? 'Start' : 'Cel';
       issues.push(matches.length
@@ -402,26 +735,36 @@ function applyRouteLink() {
     }
   }
 
-  switchLevel(chosen.start?.level ?? byId.get(G.start).level);
+  switchLevel(chosen.start?.level ?? placesById.get(graph.start).level);
   guideDestinationFromLink = Boolean(start && chosen.start && !end);
   setDestinationPrompt(guideDestinationFromLink);
-  if (issues.length) error(issues.join(' '));
+  if (issues.length) showError(issues.join(' '));
   else if (chosen.start && chosen.end) run();
-  return chosen.start ?? byId.get(G.start);
+  return chosen.start ?? placesById.get(graph.start);
 }
 
-$('find').onclick = run;
+getById('find').onclick = run;
 const defaultStart = applyRouteLink();
-$('reset').onclick = () => {
+getById('reset').onclick = () => {
   clearRoute();
   chosen = {start: defaultStart, end: null};
-  $('start').value = label(defaultStart);
-  $('end').value = '';
+  getById('start').value = placeLabel(defaultStart);
+  getById('end').value = '';
   setDestinationPrompt(guideDestinationFromLink);
   switchLevel(defaultStart.level);
-  $('find').focus();
+  getById('find').focus();
 };
 
 // Public integration hook: compute routes using the same graph as the UI.
-window.schoolNavigation={graph:G,dijkstra,search,exactMatches,route:(a,b,allow=false)=>dijkstra(byId.get(a)?.node,byId.get(b)?.node,false)||(allow?dijkstra(byId.get(a)?.node,byId.get(b)?.node,true):null)};
-
+window.schoolNavigation = {
+  graph,
+  dijkstra,
+  search,
+  exactMatches,
+  route(startId, endId, allowAssumed = false) {
+    const start = placesById.get(startId)?.node;
+    const end = placesById.get(endId)?.node;
+    const confirmedRoute = dijkstra(start, end);
+    return confirmedRoute || (allowAssumed ? dijkstra(start, end, true) : null);
+  },
+};
