@@ -93,8 +93,12 @@ function dijkstra(start, end, allowAssumed = false) {
   return null;
 }
 
-let chosen = {start: placesById.get(graph.start), end: null};
+let chosen = {start: null, end: null};
 let selectedRoom = null;
+let previewedRoom = null;
+let lookupMode = false;
+let manualRouteSetup = false;
+let hasStartFromLink = false;
 let selectedStair = null;
 let legs = [];
 let activeLeg = -1;
@@ -161,13 +165,21 @@ function exactMatches(value) {
   return namedPlaces.filter(place => place.number && normalizeNumber(place.number) === normalizeNumber(query));
 }
 
-function choosePlace(field, place) {
-  if (!place?.named) return;
+function assignPlace(field, place) {
   chosen[field] = place;
   getById(field).value = placeLabel(place);
   if (field === 'end') setDestinationPrompt(false);
   hideOptions(field);
-  if (chosen.start && chosen.end) run();
+}
+
+function choosePlace(field, place) {
+  if (!place?.named) return;
+  assignPlace(field, place);
+  if (lookupMode && field === 'end') {
+    previewPlace(place);
+  } else if (chosen.start && chosen.end) {
+    run();
+  }
 }
 
 function hideOptions(field) {
@@ -232,7 +244,10 @@ function setupPlaceSearch(field) {
 
   input.addEventListener('input', () => {
     chosen[field] = null;
-    if (field === 'end' && input.value.trim()) setDestinationPrompt(false);
+    if (field === 'end') {
+      if (input.value.trim()) setDestinationPrompt(false);
+      clearRoomPreview();
+    }
     clearRoute();
     showOptions();
   });
@@ -305,25 +320,76 @@ const roomPopup = getById('room-popup');
 const stairPopup = getById('stair-popup');
 const mapViewport = getById('map-viewport');
 const mapCard = roomPopup.parentElement;
+
+function applyRoomLabelMode() {
+  const showNames = window.mapConfig?.roomLabels === 'numbers-and-names';
+  mapViewport.dataset.roomLabels = showNames ? 'numbers-and-names' : 'numbers';
+  if (showNames) return;
+
+  const visibleNames = new Set((window.mapConfig?.alwaysShowRoomNames ?? []).map(normalizeText));
+  for (const label of mapViewport.querySelectorAll('.room-label')) {
+    const nameLines = [...label.querySelectorAll('.label-name')];
+    if (!nameLines.length) continue;
+    const name = nameLines.map(line => line.textContent.trim()).join(' ').replace(/-\s+/g, '');
+    if (visibleNames.has(normalizeText(name))) {
+      label.setAttribute('data-show-room-name', '');
+      continue;
+    }
+
+    // Keep the number block centered when the supporting text is hidden.
+    const numbers = [...label.querySelectorAll('.label-number[y]')];
+    if (!numbers.length) continue;
+    const lines = [...label.querySelectorAll('tspan[y]')];
+    const centerY = spans => (Number(spans[0].getAttribute('y')) + Number(spans.at(-1).getAttribute('y'))) / 2;
+    const offset = centerY(lines) - centerY(numbers);
+    for (const number of numbers) {
+      number.setAttribute('y', Number(number.getAttribute('y')) + offset);
+    }
+  }
+
+  // The room name is displayed by the click popup, not the native hover tooltip.
+  for (const title of mapViewport.querySelectorAll('.room > title')) title.remove();
+}
+
+applyRoomLabelMode();
 const routeControls = getById('route-controls');
 const routeControlsToggle = getById('route-controls-toggle');
 const routePage = mapCard.closest('main');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
+let routeControlsTransition = 0;
+
 function setRouteControlsCollapsed(collapsed) {
-  if (routeControls.classList.contains('is-collapsed') === collapsed) return;
+  if (routeControls.classList.contains('is-collapsed') === collapsed) {
+    updateSearchFields();
+    return;
+  }
   if (collapsed && routeControls.contains(document.activeElement)) {
     routeControlsToggle.focus({preventScroll: true});
   }
-  routeControls.classList.toggle('is-animating', !reduceMotion.matches);
+  const animate = !reduceMotion.matches;
+  const transition = ++routeControlsTransition;
+  routeControls.classList.toggle('is-animating', animate);
   routeControls.classList.toggle('is-collapsed', collapsed);
   routeControls.inert = collapsed;
   routeControlsToggle.setAttribute('aria-expanded', String(!collapsed));
   routeControlsToggle.setAttribute('aria-label', collapsed ? 'Rozwiń panel trasy' : 'Zwiń panel trasy');
+  updateSearchFields();
+
+  if (animate) {
+    requestAnimationFrame(() => {
+      const animations = routeControls.getAnimations()
+        .filter(animation => animation.transitionProperty === 'grid-template-rows');
+      Promise.allSettled(animations.map(animation => animation.finished)).then(() => {
+        // A newer click may have reversed the transition.
+        if (transition === routeControlsTransition) routeControls.classList.remove('is-animating');
+      });
+    });
+  }
 }
 
-function showRouteView(active) {
-  routePage.classList.toggle('has-route', active);
+function showFocusedMap(active) {
+  routePage.classList.toggle('is-map-focused', active);
   routeControlsToggle.hidden = !active;
   setRouteControlsCollapsed(active);
 }
@@ -331,11 +397,22 @@ function showRouteView(active) {
 routeControlsToggle.addEventListener('click', () => {
   setRouteControlsCollapsed(!routeControls.inert);
 });
-routeControls.addEventListener('transitionend', event => {
-  if (event.target === routeControls && event.propertyName === 'grid-template-rows') {
-    routeControls.classList.remove('is-animating');
-  }
-});
+function clearRoomPreview() {
+  previewedRoom?.removeAttribute('data-room-preview');
+  previewedRoom = null;
+}
+
+function previewPlace(place) {
+  const room = getById(place.id);
+  if (!room) return;
+  clearRoomPreview();
+  clearRoute();
+  if (selectedRoom) clearRoomSelection();
+  previewedRoom = room;
+  room.setAttribute('data-room-preview', '');
+  switchLevel(place.level);
+  showFocusedMap(true);
+}
 
 function positionMapPopup(anchorElement, popup) {
   const room = anchorElement.getBoundingClientRect();
@@ -399,9 +476,13 @@ function selectRoom(room, focusActions = false) {
   room.classList.add('selected');
   room.setAttribute('aria-expanded', 'true');
   getById('room-name').textContent = placeLabel(place);
+  updateRoomActions();
   roomPopup.hidden = false;
   positionMapPopup(room, roomPopup);
-  if (focusActions) getById('use-start').focus({preventScroll: true});
+  if (focusActions) {
+    const action = getById(getById('use-start').hidden ? 'use-end' : 'use-start');
+    action.focus({preventScroll: true});
+  }
 }
 
 for (const tab of document.querySelectorAll('[data-target]')) {
@@ -435,8 +516,29 @@ document.addEventListener('keydown', event => {
   else clearStairSelection();
   if (focusWasInPopup) anchor.focus({preventScroll: true});
 });
-getById('use-start').onclick = () => { if (selectedRoom) choosePlace('start', placesById.get(selectedRoom.id)); };
-getById('use-end').onclick = () => { if (selectedRoom) choosePlace('end', placesById.get(selectedRoom.id)); };
+const roomActions = [
+  {field: 'start', button: getById('use-start')},
+  {field: 'end', button: getById('use-end')},
+];
+
+function updateRoomActions() {
+  for (const {field, button} of roomActions) {
+    button.toggleAttribute('data-field-filled', Boolean(getById(field).value.trim()));
+  }
+}
+
+for (const {field, button} of roomActions) {
+  button.addEventListener('click', () => {
+    if (!selectedRoom) return;
+    const place = placesById.get(selectedRoom.id);
+    if (!place?.named) return;
+
+    manualRouteSetup = true;
+    assignPlace(field, place);
+    clearRoomPreview();
+    clearRoute({keepMapView: true});
+  });
+}
 function createSvgElement(tag, attributes) {
   const element = document.createElementNS(svgNamespace, tag);
   for (const [name, value] of Object.entries(attributes)) element.setAttribute(name, value);
@@ -472,7 +574,7 @@ pathsButton.addEventListener('click', () => {
 });
 
 // Route state and transfer instructions.
-function clearRoute() {
+function clearRoute({keepMapView = false} = {}) {
   legs = [];
   activeLeg = -1;
   showInstruction();
@@ -481,7 +583,8 @@ function clearRoute() {
   document.querySelectorAll('.stair-target.used').forEach(el => el.classList.remove('used'));
   getById('status').textContent = '';
   getById('reset').hidden = true;
-  showRouteView(false);
+  if (!keepMapView && !previewedRoom) showFocusedMap(false);
+  else updateSearchFields();
   if (selectedStair) clearStairSelection();
 }
 function showError(message) {
@@ -687,7 +790,7 @@ function drawRoute(route, start, end) {
   getById(end.id)?.classList.add('destination');
   getById('reset').hidden = false;
   switchLevel(start.level, 0);
-  showRouteView(true);
+  showFocusedMap(true);
 }
 
 function run() {
@@ -704,15 +807,29 @@ function run() {
     showError('Brak potwierdzonego połączenia na planie.');
     return;
   }
+  clearRoomPreview();
   drawRoute(route, start, end);
 }
 
 // Initialise the navigation from a link or the default entrance.
 let guideDestinationFromLink = false;
 
+function updateSearchFields() {
+  const canSetRoute = manualRouteSetup || previewedRoom || legs.length;
+  const lookupOnly = lookupMode && !canSetRoute;
+  const startField = getById('start-field');
+  startField.hidden = hasStartFromLink || lookupOnly;
+  startField.parentElement.classList.toggle('lookup-only', lookupOnly);
+  getById('find').hidden = lookupOnly;
+  const awaitingDestination = getById('end').classList.contains('awaiting-destination');
+  const routeLabel = awaitingDestination ? 'Dokąd? Wpisz numer lub nazwę' : 'Dokąd? Numer lub nazwa';
+  getById('end-label').textContent = lookupOnly ? 'Wyszukaj' : routeLabel;
+  updateRoomActions();
+}
+
 function setDestinationPrompt(show) {
   getById('end').classList.toggle('awaiting-destination', show);
-  getById('end-label').textContent = show ? 'Dokąd? Wpisz numer lub nazwę' : 'Dokąd? Numer lub nazwa';
+  updateSearchFields();
 }
 
 function applyRouteLink() {
@@ -736,23 +853,28 @@ function applyRouteLink() {
   }
 
   switchLevel(chosen.start?.level ?? placesById.get(graph.start).level);
-  guideDestinationFromLink = Boolean(start && chosen.start && !end);
+  lookupMode = !start && !end;
+  hasStartFromLink = Boolean(start && chosen.start);
+  guideDestinationFromLink = hasStartFromLink && !end;
+  getById('use-start').hidden = hasStartFromLink;
   setDestinationPrompt(guideDestinationFromLink);
   if (issues.length) showError(issues.join(' '));
   else if (chosen.start && chosen.end) run();
-  return chosen.start ?? placesById.get(graph.start);
+  return chosen.start;
 }
 
 getById('find').onclick = run;
-const defaultStart = applyRouteLink();
+const startFromLink = applyRouteLink();
 getById('reset').onclick = () => {
+  manualRouteSetup = false;
+  clearRoomPreview();
   clearRoute();
-  chosen = {start: defaultStart, end: null};
-  getById('start').value = placeLabel(defaultStart);
+  chosen = {start: startFromLink, end: null};
+  getById('start').value = startFromLink ? placeLabel(startFromLink) : '';
   getById('end').value = '';
   setDestinationPrompt(guideDestinationFromLink);
-  switchLevel(defaultStart.level);
-  getById('find').focus();
+  switchLevel(startFromLink?.level ?? placesById.get(graph.start).level);
+  getById(lookupMode ? 'end' : 'find').focus();
 };
 
 // Public integration hook: compute routes using the same graph as the UI.

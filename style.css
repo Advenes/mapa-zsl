@@ -57,7 +57,17 @@
 .room { fill: var(--subtle); stroke: var(--border); stroke-width: var(--room-stroke-width); stroke-linejoin: round; transition: fill var(--hover-duration) ease; outline: none; }
 .room[role="button"] { cursor: pointer; }
 .room[role="button"]:is(:hover, :focus-visible) { fill: var(--surface); stroke: var(--accent); }
-.room.selected { fill: var(--surface); stroke: var(--accent); stroke-width: var(--focus-width); }
+.room.selected, .room[data-room-preview] { fill: var(--surface); stroke: var(--accent); stroke-width: var(--focus-width); }
+.entrance-arrow[data-room-preview] { stroke-width: var(--focus-width); }
+[data-room-preview] {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: room-preview-pulse 1s ease-in-out infinite;
+}
+@keyframes room-preview-pulse {
+  0%, 100% { transform: scale(0.98); stroke-opacity: 0.6; }
+  50% { transform: scale(1.02); stroke-opacity: 1; }
+}
 .room.destination { fill: var(--surface); stroke: var(--destination); stroke-width: 2; }
 .room.origin { fill: var(--surface); stroke: var(--origin); stroke-width: 2; }
 .room[role="button"]:focus-visible { stroke-width: var(--focus-width); }
@@ -71,6 +81,7 @@ svg text { font-family: Arial, sans-serif; }
 .label-size-17 { font-size: var(--map-text-large); }
 .label-number { font-weight: 700; }
 .label-name { font-weight: 400; }
+#map-viewport[data-room-labels="numbers"] .room-label:not([data-show-room-name]) .label-name { display: none; }
 .detail-solid { fill: var(--subtle); stroke: var(--border); stroke-width: var(--detail-solid-width); }
 .detail-line { fill: none; stroke: var(--border); stroke-width: var(--detail-line-width); }
 .entrance-arrow { fill: none; stroke: var(--accent); stroke-width: var(--entrance-width); }
@@ -90,7 +101,7 @@ button { border: 1px solid var(--border); border-radius: 5px; padding: 10px 14px
 nav button[aria-selected=true], .primary { background: var(--accent); color: var(--surface); border-color: var(--accent); }
 .map, .map-popup, .routing { background: var(--surface); border: 1px solid var(--subtle); border-radius: var(--panel-radius); }
 .map { position: relative; padding: 12px; min-height: 280px; display: grid; grid-template-rows: auto 1fr; gap: 8px; overflow: hidden; }
-main.has-route {
+main.is-map-focused {
   height: 100dvh;
   display: grid;
   grid-template-rows: auto auto minmax(320px, 1fr);
@@ -145,14 +156,14 @@ main.has-route {
 .map-viewport { display: grid; align-items: center; min-width: 0; }
 .map-viewport svg { display: block; width: 100%; height: auto; max-height: var(--map-max-height); touch-action: none; user-select: none; }
 .map-viewport svg[data-plan-level-svg^="pietro-"] { aspect-ratio: 997 / 230; }
-.has-route .map-viewport {
+.is-map-focused .map-viewport {
   height: auto;
   min-height: 0;
   grid-template-rows: minmax(0, 1fr);
   align-items: stretch;
 }
-.has-route .map-viewport svg,
-.has-route .map-viewport svg[data-plan-level-svg^="pietro-"] {
+.is-map-focused .map-viewport svg,
+.is-map-focused .map-viewport svg[data-plan-level-svg^="pietro-"] {
   height: 100%;
   max-height: none;
   aspect-ratio: auto;
@@ -187,7 +198,16 @@ main.has-route {
 small { font-size: var(--text-small); }
 [hidden] { display: none !important; }
 .routing { padding: 16px; margin: 0 0 12px; }
-.fields { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; }
+.fields { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: end; }
+.fields.lookup-only { grid-template-columns: minmax(0, 1fr); }
+#start-field {
+  grid-column: 1;
+  animation: reveal-start-field 0.1s ease-out both;
+}
+@keyframes reveal-start-field {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .field { position: relative; min-width: 0; }
 .field label { display: block; font-size: var(--text-body); font-weight: 650; margin-bottom: 6px; }
 .field input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font: inherit; color: var(--text); }
@@ -222,6 +242,7 @@ small { font-size: var(--text-small); }
 .route-halo { fill: none; stroke: var(--surface); stroke-width: var(--route-halo-width); stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .nav-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .nav-actions button { font-size: var(--text-body); padding: 5px 9px; }
+#room-popup button[data-field-filled] { background: var(--subtle); }
 nav button.on-route:after { content: ' •'; color: var(--route); font-weight: bold; }
 nav button[aria-selected=true].on-route:after { color: var(--surface); }
 .metric { font-size: var(--text-title); font-weight: 700; color: var(--accent); }
@@ -275,6 +296,8 @@ nav button[aria-selected=true].on-route:after { color: var(--surface); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-room-preview] { animation: none; }
+  #start-field { animation: none; }
   .field input.awaiting-destination:not(:focus) { animation: none; }
   .route-controls,
   .route-controls-toggle span { transition: none; }

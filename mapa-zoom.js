@@ -5,6 +5,7 @@
   const fitButton = document.getElementById('map-fit');
   const maxZoom = 6;
   const maxRouteZoom = 2.5;
+  const maxRoomZoom = 1.7;
   const zoomStep = 1.3;
   const dragThreshold = 6;
   const minRouteLengthForArrows = 48;
@@ -21,7 +22,8 @@
   let fittedFrame;
   let view;
   let routeLayer = null;
-  let autoFitRoute = false;
+  let focusedRoom = null;
+  let autoFitTarget = false;
   let dragging = false;
   let suppressClickUntil = 0;
 
@@ -82,14 +84,14 @@
     const useOriginalViewBox = zoom === 1 && fittedFrame === mapBounds;
     svg.setAttribute('viewBox', useOriginalViewBox ? originalViewBox : `${x} ${y} ${width} ${height}`);
     zoomOut.disabled = zoom <= 1;
-    fitButton.disabled = zoom === 1 && !autoFitRoute;
+    fitButton.disabled = zoom === 1 && !autoFitTarget;
     zoomIn.disabled = zoom === maxZoom;
     viewport.classList.toggle('is-zoomed', zoom > 1);
     renderRouteArrows();
   }
 
   function getFittedFrame() {
-    const fillsViewport = mobileLayout.matches || mapPage.classList.contains('has-route');
+    const fillsViewport = mobileLayout.matches || mapPage.classList.contains('is-map-focused');
     if (!fillsViewport || !viewport.clientWidth || !viewport.clientHeight) return mapBounds;
     const ratio = viewport.clientWidth / viewport.clientHeight;
     const width = Math.max(mapBounds.width, mapBounds.height * ratio);
@@ -125,12 +127,12 @@
     setView(1, fittedFrame.x, fittedFrame.y);
   }
 
-  function getRouteBounds() {
-    const box = routeLayer.getBBox();
-    if (routeLayer.parentElement === svg) return box;
+  function getTargetBounds(target) {
+    const box = target.getBBox();
+    if (target.parentElement === svg) return box;
 
-    // The workshop route lives inside a rotated SVG group. Convert its bounds to the root viewBox.
-    const transform = svg.getScreenCTM().inverse().multiply(routeLayer.getScreenCTM());
+    // Convert bounds from the element's local coordinates to the root viewBox.
+    const transform = svg.getScreenCTM().inverse().multiply(target.getScreenCTM());
     const points = [
       [box.x, box.y], [box.x + box.width, box.y],
       [box.x, box.y + box.height], [box.x + box.width, box.y + box.height],
@@ -141,14 +143,14 @@
     return {x, y, width: Math.max(...xs) - x, height: Math.max(...ys) - y};
   }
 
-  function fitRoute() {
-    const {x, y, width, height} = getRouteBounds();
+  function fitTarget() {
+    const {x, y, width, height} = getTargetBounds(routeLayer || focusedRoom);
     const screenWidth = viewport.clientWidth;
     const screenHeight = viewport.clientHeight;
     const margin = Math.min(32, screenWidth * 0.09, screenHeight * 0.09);
     const horizontalFit = fittedFrame.width * (1 - 2 * margin / screenWidth) / width;
     const verticalFit = fittedFrame.height * (1 - 2 * margin / screenHeight) / height;
-    const zoom = Math.min(maxRouteZoom, horizontalFit, verticalFit);
+    const zoom = Math.min(routeLayer ? maxRouteZoom : maxRoomZoom, horizontalFit, verticalFit);
     const viewWidth = fittedFrame.width / zoom;
     const viewHeight = fittedFrame.height / zoom;
     const marginX = margin * viewWidth / screenWidth;
@@ -170,8 +172,8 @@
     }
     const {x, y, width, height, zoom} = view;
     fittedFrame = next;
-    if (autoFitRoute) {
-      fitRoute();
+    if (autoFitTarget) {
+      fitTarget();
       return;
     }
     const centeredX = x + (width - fittedFrame.width / zoom) / 2;
@@ -191,18 +193,22 @@
     const [x, y, width, height] = originalViewBox.split(/[\s,]+/).map(Number);
     mapBounds = {x, y, width, height};
     routeLayer = null;
-    autoFitRoute = false;
+    focusedRoom = null;
+    autoFitTarget = false;
     fitMap();
   }
 
-  function syncRouteView() {
+  function syncMapFocus() {
     selectMap();
-    const next = svg?.querySelector('.route-layer:not([hidden])') ?? null;
-    if (next === routeLayer) return;
-    routeLayer = next;
-    autoFitRoute = Boolean(next);
+    const nextRoute = svg?.querySelector('.route-layer:not([hidden])') ?? null;
+    const nextRoom = svg?.querySelector('[data-room-preview]') ?? null;
+    if (nextRoute === routeLayer && nextRoom === focusedRoom) return;
+    routeLayer = nextRoute;
+    focusedRoom = nextRoom;
+    autoFitTarget = Boolean(routeLayer || focusedRoom);
     fittedFrame = getFittedFrame();
-    if (autoFitRoute) fitRoute();
+    if (autoFitTarget) fitTarget();
+    else if (mapPage.classList.contains('is-map-focused')) render();
     else fitMap();
   }
 
@@ -216,7 +222,7 @@
   }
 
   function moveView(factor, fromAnchor, toAnchor = fromAnchor) {
-    autoFitRoute = false;
+    autoFitTarget = false;
     const zoom = clamp(view.zoom * factor, Math.min(1, view.zoom), maxZoom);
     const width = fittedFrame.width / zoom;
     const height = fittedFrame.height / zoom;
@@ -228,7 +234,7 @@
   zoomOut.addEventListener('click', () => moveView(1 / zoomStep, center));
   zoomIn.addEventListener('click', () => moveView(zoomStep, center));
   fitButton.addEventListener('click', () => {
-    autoFitRoute = false;
+    autoFitTarget = false;
     fitMap();
   });
   viewport.addEventListener('wheel', event => {
@@ -295,11 +301,11 @@
     event.stopPropagation();
   }, true);
 
-  syncRouteView();
+  syncMapFocus();
   new ResizeObserver(resizeMap).observe(viewport);
   new MutationObserver(resizeMap).observe(mapPage, {attributes: true, attributeFilter: ['class']});
   mobileLayout.addEventListener('change', resizeMap);
-  new MutationObserver(syncRouteView).observe(viewport, {
-    attributes: true, attributeFilter: ['hidden'], childList: true, subtree: true,
+  new MutationObserver(syncMapFocus).observe(viewport, {
+    attributes: true, attributeFilter: ['hidden', 'data-room-preview'], childList: true, subtree: true,
   });
 })();
